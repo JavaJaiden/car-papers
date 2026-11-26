@@ -1,46 +1,48 @@
 # Car Papers website
 
-The public site for the Car Papers iPhone app: landing page, privacy policy and support page. Plain HTML and CSS with one small inline script, served by GitHub Pages. No analytics, no cookies, no outside requests: fonts, images and the video are all served from this repository.
+The public site for the Car Papers iPhone app: landing page, privacy policy and support page. Plain HTML, one stylesheet and one small script, served by GitHub Pages. No analytics, no cookies, no outside requests: fonts, images and the video are all served from this repository.
 
 - `index.html`: the landing page.
 - `privacy.html`: the privacy policy. The App Store listing and the app's Settings link to it, so keep its address.
 - `support.html`: the support page. The App Store listing links to it.
-- `styles.css`: everything visual, including every animation.
+- `apple.css`: everything visual, including every animation.
+- `apple.js`: the scroll effects, the devices sequence, the sticky "How it works" phone, the highlights gallery and the film player. Nothing is sent anywhere.
 
-## Brand
+## Design
 
-Colours, corner radii and shadows are the app's own design tokens (`docs/BRIEF.md`, section 5, in the app's repository). The logo is "Seal", drawn as inline SVG from the app's `Shared/Drawing/LogoArtwork.swift`. The large folder at the top of the page is that logo with three papers in it.
+The page follows the conventions of Apple's product pages (system font, white and light grey sections with one black section, centred headlines, a frosted bar at the top, pill buttons, footnotes) in Car Papers' own colours, with its own "Seal" logo and no Apple logos, artwork or slogans. Colours are the app's design tokens (`docs/BRIEF.md`, section 5, in the app's repository).
 
-Type:
-
-- Bricolage Grotesque Bold for headlines,
-- Instrument Sans for text,
-- Geist Mono for small labels,
-- the iPhone's own system font inside the drawings of app screens, so they read like the app on an iPhone.
-
-The three fonts are under the SIL Open Font License; the licences are next to the files in `assets/fonts/`.
+Type is the visitor's system font, so SF Pro on Apple devices. Elsewhere Instrument Sans stands in; it is under the SIL Open Font License, and the licence is next to the files in `assets/fonts/`.
 
 ## Motion
 
-Each graphic animates when it scrolls into view, and again the next time. The script only adds the starting states, so without it every graphic simply shows its finished state, and with Reduce Motion turned on nothing moves.
+- **The setup** (`#ready`): five screens of the app's first run, drawn in HTML in the app's colours and type, pushed in one after another inside an iPhone, with the car name typed and each tap shown. It loops every 15 seconds.
+- **The devices** (`#devices`): on wide screens the section stays pinned while you scroll. The iPhone turns to face you, the iPhone Duo arrives folded (showing its outer screen) and opens, and the Android preview turns in. On small screens each device plays as it scrolls into view. `apple.js` sets `--a`, `--d`, `--u` and `--b` from 0 to 1 on each figure; the CSS turns them into motion.
+- Headlines and cards rise in once as they arrive, the privacy statement lights up word by word, and the "How it works" phone follows the steps.
+
+Without the script every section shows its finished state, and with Reduce Motion turned on nothing moves.
 
 ## Assets
 
 - `assets/screens/`: real screens of the app in demo mode with the made-up sample documents (from `docs/screenshots/raw/` in the app's repository), at 450 and 900 pixels wide.
-- `assets/video/`: the 32-second tour (`docs/video/car-papers-demo.mp4` in the app's repository) re-encoded to 720 × 1280 for the web, its poster frame, and captions of the voiceover. It downloads only when someone presses play.
+- `assets/gallery/`: the seven pictures in the highlights gallery, the same as the App Store screenshots.
+- `assets/devices/`: the iPhone Duo's outer screen (a capture from the iPhone Duo simulator), the two halves of its inner screen (the home screen and a registration, cropped from screenshots of the app), and three screens of the Android version in development. The Android status bar is drawn over those screenshots on the page so it shows 9:41 like the others.
+- `assets/video/`: the 38-second film (`docs/video/car-papers-demo.mp4` in the app's repository) re-encoded to 720 × 1280 for the web, its poster frame, and captions of the voiceover. It downloads only when someone presses play.
 - `assets/og-image.jpg`: the 1200 × 630 picture shown when the page is shared.
 - `assets/favicon.svg`, `favicon-32.png`, `apple-touch-icon.png`: the app icon.
 
 ## Wording rules
 
-Never say "digital license", "digital ID", "official", "legal in all 50 states" or "never get a ticket", or suggest any tie to a DMV or a government. The license photo is always "a backup copy". Keep the "Good to know" paragraph.
+- Never say "digital license", "digital ID", "official", "legal in all 50 states" or "never get a ticket", or suggest any tie to a DMV or a government. The license photo is always "a backup copy". Keep the "Good to know" paragraph.
+- The app is free for now. Say "Free", but never that it will always be free.
+- The Android version is only ever "in development" or a "preview": no store badge, no date.
 
 ## When the app is on the App Store
 
-The page says "Coming soon to the App Store" in two places (search for `At launch`). Replace each with Apple's official "Download on the App Store" badge, linked to https://apps.apple.com/app/id6838867229. Get the badge from Apple's marketing resources; don't redraw it.
+The page says "Coming soon to the App Store" in two places (search for `At launch`): under the phones at the top, and in the "Free" section. Replace each with Apple's official "Download on the App Store" badge, linked to https://apps.apple.com/app/id6838867229, and keep "Android version in development." next to the top one. Get the badge from Apple's marketing resources; don't redraw it.
 
-If the app stops being free, change the "Free" section, the receipt, the first question, the JSON-LD `price` and the share text in `index.html`.
+If the app stops being free, change the "Free. No sign-in." line at the top, the "Free." point in the setup section, the "Free" section, the first question, the page and share descriptions, and the JSON-LD `price` in `index.html`. The film says it is free too, in its voiceover and its captions.
 
 ## Domain
 
-The site is meant to be served at https://carpapers.org. GitHub Pages reads the domain from `CNAME`; GoDaddy holds the DNS (four A records for `@` pointing at GitHub Pages, and a `www` CNAME to `javajaiden.github.io`). With the domain set, the old `javajaiden.github.io/car-papers/` addresses redirect to it, so links already in the App Store listing and the app keep working.
+The site is served at https://carpapers.org. GitHub Pages reads the domain from `CNAME`; GoDaddy holds the DNS (four A records and four AAAA records for `@` pointing at GitHub Pages, and a `www` CNAME to `javajaiden.github.io`). With the domain set, the old `javajaiden.github.io/car-papers/` addresses redirect to it, so links already in the App Store listing and the app keep working.

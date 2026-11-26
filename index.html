@@ -6,7 +6,7 @@
 <title>Car Papers: your registration and insurance card on your iPhone</title>
 <meta name="description" content="Keep your vehicle registration and insurance card on your iPhone. Show them in one tap, and get a reminder before they expire. Free. No account. Nothing leaves your phone.">
 <link rel="canonical" href="https://carpapers.org/">
-<meta name="theme-color" content="#F4F6FA">
+<meta name="theme-color" content="#ffffff">
 <meta name="color-scheme" content="light">
 <meta name="format-detection" content="telephone=no">
 <meta name="apple-itunes-app" content="app-id=6838867229">
@@ -25,9 +25,7 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<link rel="preload" href="assets/fonts/BricolageGrotesque-Bold.woff" as="font" type="font/woff" crossorigin>
-<link rel="preload" href="assets/fonts/InstrumentSans-Regular.woff" as="font" type="font/woff" crossorigin>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="apple.css">
 <script>document.documentElement.classList.add('js');</script>
 
 <script type="application/ld+json">
@@ -51,13 +49,10 @@
 <!-- Shared drawings. The logo is "Seal", drawn from the app's own geometry (Shared/Drawing/LogoArtwork.swift). -->
 <svg class="sprite" aria-hidden="true" focusable="false">
   <defs>
-    <linearGradient id="g-d-back" x1="0" y1="13" x2="0" y2="55" gradientUnits="userSpaceOnUse"><stop stop-color="#2F60D4"/><stop offset="1" stop-color="#2552C4"/></linearGradient>
-    <linearGradient id="g-d-front" x1="0" y1="31" x2="0" y2="55" gradientUnits="userSpaceOnUse"><stop stop-color="#5B86EE"/><stop offset="1" stop-color="#3A69DD"/></linearGradient>
-    <linearGradient id="g-d-shade" x1="0" y1="27.5" x2="0" y2="31" gradientUnits="userSpaceOnUse"><stop stop-color="#0D1B3E" stop-opacity="0"/><stop offset="1" stop-color="#0D1B3E" stop-opacity=".18"/></linearGradient>
     <linearGradient id="g-l-front" x1="0" y1="31" x2="0" y2="55" gradientUnits="userSpaceOnUse"><stop stop-color="#2F60D4"/><stop offset="1" stop-color="#2552C4"/></linearGradient>
     <linearGradient id="g-l-shade" x1="0" y1="27.5" x2="0" y2="31" gradientUnits="userSpaceOnUse"><stop stop-color="#0D1B3E" stop-opacity="0"/><stop offset="1" stop-color="#0D1B3E" stop-opacity=".12"/></linearGradient>
   </defs>
-  <symbol id="logo-light" viewBox="0 0 64 64">
+  <symbol id="logo" viewBox="0 0 64 64">
     <path d="M6 18a5 5 0 0 1 5-5h10.6c1.7 0 3 .7 4 2.1l1.6 2.3c.9 1.3 2.1 2.1 3.8 2.1H53a5 5 0 0 1 5 5V50a5 5 0 0 1-5 5H11a5 5 0 0 1-5-5Z" fill="#1D3F8F"/>
     <rect x="19" y="7" width="33" height="40" rx="3.5" fill="#fff" stroke="#C9D3E3" stroke-width="1.2"/>
     <rect x="24.5" y="13" width="21" height="3.4" rx="1.7" fill="#EEF2F8"/>
@@ -69,571 +64,490 @@
     <circle cx="47" cy="33" r="8" fill="#2E8B57"/>
     <path d="M43 33.2 45.8 36 51 30.2" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
-  <symbol id="logo-dark" viewBox="0 0 64 64">
-    <path d="M6 18a5 5 0 0 1 5-5h10.6c1.7 0 3 .7 4 2.1l1.6 2.3c.9 1.3 2.1 2.1 3.8 2.1H53a5 5 0 0 1 5 5V50a5 5 0 0 1-5 5H11a5 5 0 0 1-5-5Z" fill="url(#g-d-back)"/>
-    <rect x="19" y="7" width="33" height="40" rx="3.5" fill="#fff"/>
-    <rect x="24.5" y="13" width="21" height="3.4" rx="1.7" fill="#DCE3EE"/>
-    <rect x="24.5" y="19.5" width="15" height="3.4" rx="1.7" fill="#DCE3EE"/>
-    <rect x="19" y="27.5" width="33" height="3.5" fill="url(#g-d-shade)"/>
-    <path d="M5.75 43 4.902 34.863A3.5 3.5 0 0 1 8.384 31h47.232a3.5 3.5 0 0 1 3.482 3.863L57.467 50.518A5 5 0 0 1 52.494 55H11.506a5 5 0 0 1-4.973-4.482Z" fill="url(#g-d-front)"/>
-    <rect x="8.5" y="31" width="47" height=".5" fill="#fff" fill-opacity=".35"/>
-    <circle cx="47" cy="33" r="10" fill="#fff"/>
-    <circle cx="47" cy="33" r="8" fill="#2E8B57"/>
-    <path d="M43 33.2 45.8 36 51 30.2" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-  </symbol>
   <symbol id="seal" viewBox="0 0 24 24">
     <circle cx="12" cy="12" r="12" fill="#fff"/>
     <circle cx="12" cy="12" r="9.6" fill="#2E8B57"/>
     <path d="M7.4 12.3 10.6 15.5 16.6 8.8" fill="none" stroke="#fff" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M9.5 6 15.5 12 9.5 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="M14.5 6 8.5 12 14.5 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.6v12.8a1 1 0 0 0 1.5.86l10.4-6.4a1 1 0 0 0 0-1.72L9.5 4.74A1 1 0 0 0 8 5.6Z" fill="currentColor"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6.5 6.5 17.5 17.5M17.5 6.5 6.5 17.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
   <symbol id="i-sparkles" viewBox="0 0 24 24"><g fill="currentColor"><path d="M10 6Q11.3 12.2 17.5 13.5 11.3 14.8 10 21 8.7 14.8 2.5 13.5 8.7 12.2 10 6Z"/><path d="M18 2.4Q18.7 5.3 21.6 6 18.7 6.7 18 9.6 17.3 6.7 14.4 6 17.3 5.3 18 2.4Z"/><path d="M19.5 15.3Q19.95 17.05 21.7 17.5 19.95 17.95 19.5 19.7 19.05 17.95 17.3 17.5 19.05 17.05 19.5 15.3Z"/></g></symbol>
-  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5 9.6 17.1 19 7.5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="i-arrow-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
-  <symbol id="i-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v4h4M9 12h6M9 16h4"/></g></symbol>
-  <symbol id="i-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 19 6v5.6c0 4.3-2.9 8-7 9.4-4.1-1.4-7-5.1-7-9.4V6l7-3Z"/><path d="m9 12 2.2 2.2L15.2 10"/></g></symbol>
-  <symbol id="i-person-card" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.6"/><circle cx="8.3" cy="10.8" r="2"/><path d="M5.4 15.8c.6-1.5 1.6-2.3 2.9-2.3s2.3.8 2.9 2.3M14 10h4.5M14 13.5h3"/></g></symbol>
-  <symbol id="i-card" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="2.6"/><path d="M2.5 9.6h19M6 14.6h4"/></g></symbol>
-  <symbol id="i-car" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.6 6.9 8a2.3 2.3 0 0 1 2.1-1.4h6a2.3 2.3 0 0 1 2.1 1.4l1.9 4.6"/><rect x="3.5" y="12.6" width="17" height="5.4" rx="1.8"/><path d="M6.4 18v1.7M17.6 18v1.7M7 15.3h1.6M15.4 15.3H17"/></g></symbol>
-  <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></g></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10.5" width="14" height="10" rx="2.6"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></g></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="6.5" y="2.5" width="11" height="19" rx="2.8"/><path d="M10.6 5.6h2.8"/></g></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5 9.6 17.1 19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-person" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="12" cy="8.6" r="4.1"/><path d="M4.4 20.5c.8-4.1 3.8-6.6 7.6-6.6s6.8 2.5 7.6 6.6Z"/></g></symbol>
-  <symbol id="i-star4" viewBox="0 0 24 24"><path d="M12 1.5Q13.4 10.6 22.5 12 13.4 13.4 12 22.5 10.6 13.4 1.5 12 10.6 10.6 12 1.5Z" fill="currentColor"/></symbol>
-  <symbol id="i-info" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.7v.1"/></g></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.6 6.9 8a2.3 2.3 0 0 1 2.1-1.4h6a2.3 2.3 0 0 1 2.1 1.4l1.9 4.6"/><rect x="3.5" y="12.6" width="17" height="5.4" rx="1.8"/><path d="M6.4 18v1.7M17.6 18v1.7M7 15.3h1.6M15.4 15.3H17"/></g></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-card-s" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="2.6"/><path d="M2.5 9.6h19M6 14.6h4"/></g></symbol>
+  <symbol id="i-bell-s" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 16.5V11a5.5 5.5 0 0 1 11 0v5.5l1.6 2.1H4.9Z"/><path d="M10 21.2h4"/></g></symbol>
+  <symbol id="i-doc-s" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v4h4M9 12h6M9 16h4"/></g></symbol>
+  <symbol id="i-shield-s" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 19 6v5.6c0 4.3-2.9 8-7 9.4-4.1-1.4-7-5.1-7-9.4V6l7-3Z"/><path d="m9 12 2.2 2.2L15.2 10"/></g></symbol>
+  <symbol id="i-license-s" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.6"/><circle cx="8.3" cy="10.8" r="2"/><path d="M5.4 15.8c.6-1.5 1.6-2.3 2.9-2.3s2.3.8 2.9 2.3M14 10h4.5M14 13.5h3"/></g></symbol>
 </svg>
 
-<header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="./" aria-label="Car Papers home"><svg aria-hidden="true"><use href="#logo-light"/></svg><span>Car Papers</span></a>
-    <nav class="nav" aria-label="Main">
-      <a href="#how">How it works</a>
-      <a href="#privacy">Privacy</a>
-      <a href="#faq">Questions</a>
-      <a class="keep" href="support.html">Support</a>
-    </nav>
+<nav class="localnav" aria-label="Car Papers">
+  <div class="localnav-inner">
+    <a class="localnav-title" href="./"><svg aria-hidden="true"><use href="#logo"/></svg>Car Papers</a>
+    <div class="localnav-menu">
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#privacy">Privacy</a>
+      <a class="hide-sm" href="#questions">Questions</a>
+      <a class="hide-sm" href="support.html">Support</a>
+      <a class="pill-small" href="assets/video/car-papers-demo.mp4" data-film>Watch the film</a>
+    </div>
   </div>
-</header>
+</nav>
+<span class="nav-sentinel" aria-hidden="true"></span>
 
 <main id="main">
 
-<!-- ============ Hero ============ -->
+<!-- Hero -->
 <section class="hero" aria-labelledby="hero-title">
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <h1 id="hero-title" class="display-xl">Your car papers, <span class="hl">ready when you need&nbsp;them.</span></h1>
-      <p class="lead">Keep your registration and insurance card on your iPhone. Show them in one tap, and get a reminder before either one expires.</p>
-      <div class="hero-actions">
-        <!-- At launch, replace this status with Apple's official "Download on the App Store" badge, linked to https://apps.apple.com/app/id6838867229 -->
-        <p class="store-status"><span class="live-dot" aria-hidden="true"></span><span><strong>Free for iPhone.</strong> Coming soon to the App&nbsp;Store.</span></p>
-        <a class="text-link" href="#watch">Watch the 30-second tour<svg aria-hidden="true"><use href="#i-arrow-down"/></svg></a>
-      </div>
-      <ul class="proof" aria-label="Promises">
-        <li><svg aria-hidden="true"><use href="#seal"/></svg>No account</li>
-        <li><svg aria-hidden="true"><use href="#seal"/></svg>Nothing leaves your iPhone</li>
-        <li><svg aria-hidden="true"><use href="#seal"/></svg>No ads</li>
+  <div class="hero-copy">
+    <img class="hero-icon" src="assets/apple-touch-icon.png" width="180" height="180" alt="The Car Papers app icon">
+    <p class="eyebrow gradient-text">Free. No sign-in.</p>
+    <h1 id="hero-title" class="hero-title">Car Papers</h1>
+    <p class="hero-tagline">Your car papers, ready when you need&nbsp;them.</p>
+    <div class="ctas">
+      <a class="button" href="assets/video/car-papers-demo.mp4" data-film><svg aria-hidden="true"><use href="#i-play"/></svg>Watch the film</a>
+      <a class="more-link" href="#how">See how it works<svg aria-hidden="true"><use href="#i-chevron"/></svg></a>
+    </div>
+  </div>
+  <div class="lineup" data-scroll>
+    <figure class="phone lineup-side lineup-left"><img src="assets/screens/check-900.webp" srcset="assets/screens/check-450.webp 450w, assets/screens/check-900.webp 900w" sizes="(max-width: 734px) 40vw, 280px" width="900" height="1955" alt="Car Papers reading an insurance card photo: it found the expiry date, March 15, 2027, and the insurer."></figure>
+    <figure class="phone lineup-center"><img src="assets/screens/home-900.webp" srcset="assets/screens/home-450.webp 450w, assets/screens/home-900.webp 900w" sizes="(max-width: 734px) 56vw, 330px" width="900" height="1955" fetchpriority="high" alt="The Car Papers home screen: the registration of a 2019 Honda CR-V expires December 9, 2026, marked Renew soon with 14 days left, and the insurance card is marked All good."></figure>
+    <figure class="phone lineup-side lineup-right"><img src="assets/screens/show-900.webp" srcset="assets/screens/show-450.webp 450w, assets/screens/show-900.webp 900w" sizes="(max-width: 734px) 40vw, 280px" width="900" height="1955" alt="Show mode: the insurance card full screen with the brightness turned up."></figure>
+  </div>
+  <!-- At launch, replace this line with Apple's official "Download on the App Store" badge, linked to https://apps.apple.com/app/id6838867229 -->
+  <p class="hero-note">Coming soon to the App Store. Android version in development.</p>
+</section>
+
+<!-- Ready as soon as you download it -->
+<section class="ready" id="ready" aria-labelledby="ready-title">
+  <div class="ready-grid">
+    <div class="ready-copy">
+      <p class="eyebrow gradient-text" data-reveal>Ready when you are</p>
+      <h2 id="ready-title" class="headline ready-title" data-reveal>Download it. Open it. <span class="soft">That's&nbsp;it.</span></h2>
+      <ul class="ready-points">
+        <li data-reveal>
+          <span class="rp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.8 20c.9-3.6 3.7-5.6 7.2-5.6"/><path d="M15.5 15.5 21 21M21 15.5 15.5 21"/></g></svg></span>
+          <h3>No sign-in.</h3><p>No account, no email, no password.</p>
+        </li>
+        <li data-reveal>
+          <span class="rp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 2.5 5 13.5h6l-1 8 8.5-11h-6Z"/></g></svg></span>
+          <h3>Works as soon as you download&nbsp;it.</h3><p>Open it and add your first paper straight away. Nothing to set up first.</p>
+        </li>
+        <li data-reveal>
+          <span class="rp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h9M4 12h7M4 17h5"/><path d="m14 16 2.5 2.5L21 13"/></g></svg></span>
+          <h3>Easy setup.</h3><p>Three short steps: name your car, add a photo, choose your reminders.</p>
+        </li>
+        <li data-reveal>
+          <span class="rp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 12.5V4.5a1 1 0 0 1 1-1h8l8 8-9 9-8-8Z"/><circle cx="8" cy="8" r="1.4"/></g></svg></span>
+          <h3>Free.</h3><p>No subscription, no ads and no in-app purchases.</p>
+        </li>
       </ul>
     </div>
 
-    <div class="hero-art" aria-hidden="true">
-      <div class="folder-scene">
-        <svg class="folder-svg" viewBox="-4 -17 72 77">
-          <defs>
-            <linearGradient id="h-back" x1="0" y1="13" x2="0" y2="55" gradientUnits="userSpaceOnUse"><stop stop-color="#2447A0"/><stop offset="1" stop-color="#1A3880"/></linearGradient>
-            <linearGradient id="h-front" x1="0" y1="31" x2="0" y2="55" gradientUnits="userSpaceOnUse"><stop stop-color="#3466DA"/><stop offset="1" stop-color="#2552C4"/></linearGradient>
-            <linearGradient id="h-shade" x1="0" y1="27.5" x2="0" y2="31" gradientUnits="userSpaceOnUse"><stop stop-color="#0D1B3E" stop-opacity="0"/><stop offset="1" stop-color="#0D1B3E" stop-opacity=".14"/></linearGradient>
-            <clipPath id="h-ins-clip"><rect x="5" y="-5" width="28" height="18" rx="2.2"/></clipPath>
-            <clipPath id="h-lic-clip"><rect x="33" y="-10" width="26" height="17" rx="2.2"/></clipPath>
-            <filter id="h-soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="1.6"/></filter>
-            <filter id="h-paper" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy=".5" stdDeviation=".7" flood-color="#0D1B3E" flood-opacity=".16"/></filter>
-          </defs>
+    <figure class="phone ob-phone" data-reveal aria-label="The Car Papers setup, start to finish: what do you drive, add your first document, reminders, and you're all set.">
+      <div class="ob" aria-hidden="true">
+        <div class="ob-status"><span>9:41</span><span class="ob-bars"><i></i><i></i><i></i><i></i></span></div>
 
-          <ellipse class="h-ground" cx="32" cy="57.5" rx="25" ry="2.4" fill="#0E1730" opacity=".16" filter="url(#h-soft)"/>
-          <path class="h-back" d="M6 18a5 5 0 0 1 5-5h10.6c1.7 0 3 .7 4 2.1l1.6 2.3c.9 1.3 2.1 2.1 3.8 2.1H53a5 5 0 0 1 5 5V50a5 5 0 0 1-5 5H11a5 5 0 0 1-5-5Z" fill="url(#h-back)"/>
-
-          <!-- Driver's license, behind -->
-          <g class="h-drop h-lic">
-            <g transform="rotate(9 46 -1.5)" filter="url(#h-paper)">
-              <rect x="33" y="-10" width="26" height="17" rx="2.2" fill="#fff"/>
-              <g clip-path="url(#h-lic-clip)">
-                <rect x="33" y="-10" width="26" height="4.6" fill="#1D3F8F"/>
-                <rect x="35" y="-8.4" width="10" height="1.3" rx=".65" fill="#fff" opacity=".88"/>
-                <circle cx="56" cy="-7.7" r="1.05" fill="none" stroke="#fff" stroke-opacity=".75" stroke-width=".5"/>
-                <rect x="35" y="-3.6" width="6.2" height="8.6" rx="1" fill="#E3E9F3"/>
-                <circle cx="38.1" cy="-.4" r="1.5" fill="#7B88A0"/>
-                <path d="M35.6 5c.3-1.9 1.3-3 2.5-3s2.2 1.1 2.5 3Z" fill="#7B88A0"/>
-                <rect x="43" y="-3.2" width="12.5" height="1.8" rx=".9" fill="#C5CFDF"/>
-                <rect x="43" y="-.2" width="9" height="1.2" rx=".6" fill="#DCE3EE"/>
-                <rect x="43" y="2.2" width="10.5" height="1.2" rx=".6" fill="#DCE3EE"/>
-              </g>
+        <!-- 1. Welcome -->
+        <div class="ob-screen ob-1">
+          <div class="ob-logo"><svg><use href="#logo"/></svg><b>Car Papers</b></div>
+          <svg class="ob-art" viewBox="-20 -36 300 330">
+            <g transform="rotate(9 216 30)">
+              <rect x="124" y="-28" width="184" height="116" rx="12" fill="#fff"/>
+              <path d="M136 -28h160a12 12 0 0 1 12 12v14H124v-14a12 12 0 0 1 12-12Z" fill="#1D3F8F"/>
+              <rect x="138" y="10" width="40" height="56" rx="6" fill="#E3E9F3"/>
+              <rect x="190" y="14" width="90" height="8" rx="4" fill="#C5CFDF"/>
+              <rect x="190" y="30" width="64" height="6" rx="3" fill="#DCE3EE"/>
             </g>
-          </g>
-
-          <!-- Insurance card, behind -->
-          <g class="h-drop h-ins">
-            <g transform="rotate(-10 19 4)" filter="url(#h-paper)">
-              <rect x="5" y="-5" width="28" height="18" rx="2.2" fill="#fff"/>
-              <g clip-path="url(#h-ins-clip)">
-                <rect x="5" y="-5" width="28" height="5.2" fill="#1F7C62"/>
-                <path d="M8.4 -4.1Q8.8 -2.8 10.1 -2.4 8.8 -2 8.4 -.7 8 -2 6.7 -2.4 8 -2.8 8.4 -4.1Z" fill="#fff"/>
-                <rect x="11.3" y="-3.3" width="12" height="1.3" rx=".65" fill="#fff" opacity=".92"/>
-                <rect x="11.3" y="-1.4" width="8" height=".7" rx=".35" fill="#fff" opacity=".6"/>
-                <rect x="7" y="2.4" width="10" height="1.6" rx=".8" fill="#C5CFDF"/>
-                <rect x="7" y="5.2" width="15" height="1.1" rx=".55" fill="#DCE3EE"/>
-                <rect x="7" y="7.5" width="11" height="1.1" rx=".55" fill="#DCE3EE"/>
-                <rect x="24" y="7" width="7" height="2.6" rx=".5" fill="none" stroke="#C2372C" stroke-width=".4" transform="rotate(-8 27.5 8.3)"/>
-              </g>
+            <g transform="rotate(-3 126 135)">
+              <path d="M0 14a14 14 0 0 1 14-14h56c10 0 14 6 19 14l4 7c4 6 8 9 16 9h123a20 20 0 0 1 20 20v200a20 20 0 0 1-20 20H20a20 20 0 0 1-20-20Z" fill="#1D3F8F"/>
+              <rect x="20" y="16" width="212" height="190" rx="10" fill="#fff"/>
+              <text x="36" y="48" font-size="17" font-weight="700" fill="#16233B">Registration</text>
+              <circle cx="205" cy="42" r="10" fill="none" stroke="#C9D3E3" stroke-width="2"/>
+              <rect x="36" y="66" width="140" height="6" rx="3" fill="#DCE3EE"/>
+              <rect x="36" y="80" width="166" height="6" rx="3" fill="#DCE3EE"/>
+              <rect x="36" y="94" width="100" height="6" rx="3" fill="#DCE3EE"/>
+              <path d="M16 120h220a16 16 0 0 1 16 16v114a20 20 0 0 1-20 20H20a20 20 0 0 1-20-20V136a16 16 0 0 1 16-16Z" fill="#2856C6"/>
+              <rect x="16" y="136" width="78" height="26" rx="13" fill="#fff"/>
+              <path d="M26 149.5l3.5 3.5 6.5-7" fill="none" stroke="#1A6638" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <text x="42" y="154" font-size="13" font-weight="600" fill="#1A6638">All good</text>
+              <text x="16" y="232" font-size="13" fill="#E3EAF9">Expires</text>
+              <text x="16" y="252" font-size="17" font-weight="600" fill="#fff">Nov 26, 2027</text>
+              <text x="236" y="236" font-size="26" font-weight="700" fill="#fff" text-anchor="end">365</text>
+              <text x="236" y="254" font-size="13" fill="#E3EAF9" text-anchor="end">days left</text>
             </g>
-          </g>
+          </svg>
+          <p class="ob-h1">Your car papers, ready when you need them.</p>
+          <ul class="ob-benefits">
+            <li><i><svg><use href="#i-card-s"/></svg></i>Show registration and insurance in one tap</li>
+            <li><i><svg><use href="#i-sparkles"/></svg></i>Take a photo. The app reads the dates for you.</li>
+            <li><i><svg><use href="#i-bell-s"/></svg></i>Get a reminder before anything expires</li>
+            <li><i><svg><use href="#i-lock"/></svg></i>Stays on your iPhone. We never see it.</li>
+          </ul>
+          <p class="ob-btn">Get started</p>
+          <span class="ob-tap"></span>
+        </div>
 
-          <!-- Registration: the sheet from the logo -->
-          <g class="h-drop h-reg">
-            <rect x="19" y="7" width="33" height="40" rx="3.5" fill="#fff" stroke="#C9D3E3" stroke-width=".6" filter="url(#h-paper)"/>
-            <rect x="23" y="11" width="15" height="2.6" rx="1.3" fill="#16233B" opacity=".86"/>
-            <circle cx="47.6" cy="12.3" r="2" fill="none" stroke="#C9D3E3" stroke-width=".9"/>
-            <rect x="23" y="16.6" width="22" height="1.7" rx=".85" fill="#DCE3EE"/>
-            <rect x="23" y="20.2" width="26" height="1.7" rx=".85" fill="#DCE3EE"/>
-            <rect x="23" y="23.8" width="15.5" height="1.7" rx=".85" fill="#DCE3EE"/>
-          </g>
+        <!-- 2. Your car -->
+        <div class="ob-screen ob-2">
+          <div class="ob-top"><span class="ob-back"><svg><use href="#i-chevron-left"/></svg></span><span class="ob-steps"><i class="on"></i><i></i><i></i></span></div>
+          <p class="ob-h2">What do you drive?</p>
+          <p class="ob-sub">This names your folder. You can add more cars later.</p>
+          <p class="ob-field active"><span class="ob-label">Car</span><span class="ob-typed">2019 Honda CR-V</span><span class="ob-caret"></span></p>
+          <p class="ob-field"><span class="ob-label">Plate (optional)</span>ABC 1234</p>
+          <p class="ob-row"><span>State (optional)</span><b>Choose a state</b></p>
+          <p class="ob-small-label">How it will look</p>
+          <div class="ob-card ob-car"><i><svg><use href="#i-car"/></svg></i><span><b>2019 Honda CR-V</b>Plate ABC 1234</span></div>
+          <p class="ob-btn">Continue</p>
+          <span class="ob-tap"></span>
+        </div>
 
-          <rect x="19" y="27.5" width="33" height="3.5" fill="url(#h-shade)"/>
-          <path class="h-front" d="M5.75 43 4.902 34.863A3.5 3.5 0 0 1 8.384 31h47.232a3.5 3.5 0 0 1 3.482 3.863L57.467 50.518A5 5 0 0 1 52.494 55H11.506a5 5 0 0 1-4.973-4.482Z" fill="url(#h-front)"/>
-          <rect x="8.5" y="31" width="47" height=".45" fill="#fff" fill-opacity=".4"/>
+        <!-- 3. First document -->
+        <div class="ob-screen ob-3">
+          <div class="ob-top"><span class="ob-back"><svg><use href="#i-chevron-left"/></svg></span><span class="ob-steps"><i class="on"></i><i class="on"></i><i></i></span></div>
+          <p class="ob-h2">Add your first document</p>
+          <p class="ob-sub">Start with whichever is closest to hand.</p>
+          <div class="ob-card ob-choice pressed"><i><svg><use href="#i-doc-s"/></svg></i><span><b>Registration</b>The paper from your DMV</span><svg class="ob-chev"><use href="#i-chevron"/></svg></div>
+          <div class="ob-card ob-choice"><i><svg><use href="#i-shield-s"/></svg></i><span><b>Insurance card</b>Paper, or a screenshot from your insurer</span><svg class="ob-chev"><use href="#i-chevron"/></svg></div>
+          <div class="ob-card ob-choice"><i><svg><use href="#i-license-s"/></svg></i><span><b>Driver's license</b>A backup copy for your records</span><svg class="ob-chev"><use href="#i-chevron"/></svg></div>
+          <p class="ob-tip">No papers nearby? A photo already on your phone works too.</p>
+          <p class="ob-later">I'll do this later</p>
+          <span class="ob-tap ob-tap-card"></span>
+        </div>
 
-          <g class="h-badge">
-            <circle cx="47" cy="33" r="10" fill="#fff"/>
-            <circle cx="47" cy="33" r="8" fill="#2E8B57"/>
-            <path class="h-tick" d="M43 33.2 45.8 36 51 30.2" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/>
-          </g>
-        </svg>
+        <!-- 4. Reminders -->
+        <div class="ob-screen ob-4">
+          <div class="ob-top"><span class="ob-back"><svg><use href="#i-chevron-left"/></svg></span><span class="ob-steps"><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+          <div class="ob-sample">
+            <div class="ob-alert"><img src="assets/apple-touch-icon.png" alt="" width="180" height="180" loading="lazy"><span><em>CAR PAPERS<small>9:00 AM</small></em><b>One week left on your registration</b>It expires Dec 8. Tap to renew online.</span></div>
+          </div>
+          <p class="ob-h2">Want a reminder before it expires?</p>
+          <p class="ob-sub">30 days before, 7 days before and on the day. Nothing else.</p>
+          <p class="ob-btn">Yes, remind me</p>
+          <p class="ob-btn ob-btn-tint">Not now</p>
+          <span class="ob-tap ob-tap-high"></span>
+        </div>
 
-        <div class="tag tag-lic"><span class="tag-icon"><svg><use href="#i-person-card"/></svg></span><span class="tag-text"><b>Driver's license</b><span class="pill pill-blue">Backup copy</span></span></div>
-        <div class="tag tag-ins"><span class="tag-icon"><svg><use href="#i-shield"/></svg></span><span class="tag-text"><b>Insurance card</b><span class="pill pill-green"><svg><use href="#i-check"/></svg>All good</span></span></div>
-        <div class="tag tag-reg"><span class="tag-icon"><svg><use href="#i-doc"/></svg></span><span class="tag-text"><b>Registration</b><span class="pill pill-amber">Renew soon</span></span><span class="tag-days"><b>14</b>days left</span></div>
+        <!-- 5. All set -->
+        <div class="ob-screen ob-5">
+          <span class="ob-done"><svg><use href="#i-check"/></svg></span>
+          <p class="ob-h1 ob-center">You're all set</p>
+          <p class="ob-sub ob-center">Your registration is saved. We'll remind you before Dec 8.</p>
+          <div class="ob-card ob-widget"><span class="ob-mini"><svg><use href="#i-card-s"/></svg><b>Show my papers</b></span><span><b>Open it in one tap</b>Add the widget to your Lock Screen or Home Screen.<em>Show me how →</em></span></div>
+          <p class="ob-btn">See my documents</p>
+        </div>
       </div>
+      <figcaption class="ob-caption">The whole setup. No sign-in at any step.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Highlights -->
+<section class="highlights" aria-labelledby="highlights-title">
+  <div class="section-head">
+    <h2 id="highlights-title" class="headline" data-reveal>The highlights.</h2>
+  </div>
+  <div class="gallery" tabindex="0" aria-label="Highlights, scroll sideways">
+    <figure class="tile-shot"><img src="assets/gallery/01-home.webp" width="744" height="1262" loading="lazy" alt="Your car papers, ready when you need them: the home screen with the registration and insurance card."></figure>
+    <figure class="tile-shot"><img src="assets/gallery/02-privacy.webp" width="744" height="1262" loading="lazy" alt="Nothing leaves your iPhone. No account. No sign-up. We never see your documents."></figure>
+    <figure class="tile-shot"><img src="assets/gallery/03-show.webp" width="744" height="1262" loading="lazy" alt="Show them in one tap: full screen, with the brightness turned up."></figure>
+    <figure class="tile-shot"><img src="assets/gallery/04-check-details.webp" width="744" height="1262" loading="lazy" alt="Take a photo. It fills in the details. You check the details before anything is saved."></figure>
+    <figure class="tile-shot"><img src="assets/gallery/05-reminders.webp" width="744" height="1262" loading="lazy" alt="A reminder before anything expires: 30 days before, 7 days before and on the day."></figure>
+    <figure class="tile-shot"><img src="assets/gallery/06-ask.webp" width="744" height="1262" loading="lazy" alt="Ask your papers a question: answers from your saved papers, on iPhones with Apple Intelligence."></figure>
+    <figure class="tile-shot"><img src="assets/gallery/07-widgets.webp" width="744" height="1262" loading="lazy" alt="One tap from your Home Screen: widgets for the Home Screen and the Lock Screen."></figure>
+  </div>
+  <div class="gallery-controls">
+    <div class="dots" role="group" aria-label="Choose a highlight"></div>
+    <div class="arrows">
+      <button class="round-button" type="button" data-dir="-1" aria-label="Previous highlight"><svg aria-hidden="true"><use href="#i-chevron-left"/></svg></button>
+      <button class="round-button" type="button" data-dir="1" aria-label="Next highlight"><svg aria-hidden="true"><use href="#i-chevron"/></svg></button>
     </div>
   </div>
 </section>
 
-<!-- ============ Video ============ -->
-<section class="watch" id="watch" aria-labelledby="watch-title">
-  <div class="wrap watch-grid">
-    <div class="watch-media" data-anim>
-      <div class="video-card">
-        <video id="demo-video" controls preload="none" playsinline poster="assets/video/demo-poster.webp" width="720" height="1280" aria-label="A 32-second tour of Car Papers, with a voiceover">
-          <source src="assets/video/car-papers-demo.mp4" type="video/mp4">
-          <track kind="captions" src="assets/video/car-papers-demo.vtt" srclang="en" label="English">
-        </video>
-        <button class="play" type="button" hidden><span class="play-disc" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.6v12.8a1 1 0 0 0 1.5.86l10.4-6.4a1 1 0 0 0 0-1.72L9.5 4.74A1 1 0 0 0 8 5.6Z" fill="currentColor"/></svg></span><span class="play-label">Play the tour <span>0:32</span></span></button>
-      </div>
-    </div>
-    <div class="watch-copy">
-      <h2 id="watch-title" class="display-l">See it in 30&nbsp;seconds.</h2>
-      <p class="lead">The real app, start to finish: take a photo, show your papers, get the reminder. Turn your sound on.</p>
-      <ul class="watch-facts">
-        <li><b>0:05</b>Your papers on your iPhone</li>
-        <li><b>0:08</b>A photo fills in the details</li>
-        <li><b>0:13</b>Shown full screen in one tap</li>
-        <li><b>0:21</b>A reminder before they expire</li>
-        <li><b>0:25</b>Nothing leaves your phone</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ============ The app ============ -->
-<section class="tour" id="tour" aria-labelledby="tour-title">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2 id="tour-title" class="display-l">Everything in one&nbsp;place.</h2>
-      <p class="lead">Your registration, your insurance card and a backup copy of your license, side by side on your iPhone.</p>
-    </div>
-
-    <div class="tour-stage" data-anim>
-      <figure class="phone phone-tour">
-        <img src="assets/screens/home-900.webp" srcset="assets/screens/home-450.webp 450w, assets/screens/home-900.webp 900w" sizes="(max-width: 640px) 72vw, 320px" width="900" height="1955" loading="lazy" alt="The Car Papers home screen for a 2019 Honda CR-V. The registration expires December 9, 2026, marked Renew soon with 14 days left. The insurance card is marked All good.">
-        <span class="pin" style="--x:.07;--y:.31">1</span>
-        <span class="pin" style="--x:.47;--y:.4">2</span>
-        <span class="pin" style="--x:.13;--y:.685">3</span>
-        <span class="pin" style="--x:.87;--y:.928">4</span>
-      </figure>
-      <ol class="callouts">
-        <li class="callout left" style="--x:.07;--y:.31"><span class="num">1</span><h3>Your papers, in folders</h3><p>Registration, insurance card and license each have their own folder. Swipe between them.</p></li>
-        <li class="callout right" style="--x:.47;--y:.4"><span class="num">2</span><h3>Days left, at a glance</h3><p>Green means all good. Amber means it's time to renew.</p></li>
-        <li class="callout left" style="--x:.13;--y:.685"><span class="num">3</span><h3>Renew in one tap</h3><p>Opens your state's motor vehicle website.</p></li>
-        <li class="callout right" style="--x:.87;--y:.928"><span class="num">4</span><h3>One big button</h3><p>Shows your papers full screen, with the brightness turned up.</p></li>
-      </ol>
-    </div>
-  </div>
-</section>
-
-<!-- ============ How it works ============ -->
+<!-- How it works -->
 <section class="how" id="how" aria-labelledby="how-title">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2 id="how-title" class="display-l">Add a paper once. Car&nbsp;Papers keeps it&nbsp;ready.</h2>
+  <div class="section-head">
+    <h2 id="how-title" class="headline" data-reveal>Add a paper once.<br><span class="soft">Car&nbsp;Papers keeps it&nbsp;ready.</span></h2>
+  </div>
+  <div class="how-grid">
+    <div class="how-stage" aria-hidden="true">
+      <figure class="phone stage-phone">
+        <div class="stage-screens">
+          <img class="on" data-screen="1" src="assets/screens/check-900.webp" width="900" height="1955" loading="lazy" alt="">
+          <img data-screen="2" src="assets/screens/show-900.webp" width="900" height="1955" loading="lazy" alt="">
+          <img data-screen="3" src="assets/screens/reminder-900.webp" width="900" height="1955" loading="lazy" alt="">
+        </div>
+      </figure>
     </div>
-
-    <!-- 01 Scan -->
-    <article class="file step" data-anim>
-      <p class="tab"><span>01</span>Scan</p>
-      <div class="file-body step-grid">
-        <div class="step-copy">
-          <h3 class="display-m">Take a photo. It fills in the details.</h3>
-          <p>Scan the paper or pick a screenshot. Car Papers reads the expiry date, and on iPhones with Apple Intelligence it fills in your insurer too. You check everything before it's saved.</p>
-        </div>
-        <div class="step-art scan-art" aria-hidden="true">
-          <div class="scan-photo">
-            <div class="ins-card">
-              <div class="ins-head hit hit-1">
-                <svg class="ins-mark"><use href="#i-star4"/></svg>
-                <div><b>NORTHFIELD MUTUAL</b><small>AUTO INSURANCE IDENTIFICATION CARD</small></div>
-                <span class="ins-state">LAKEMONT</span>
-              </div>
-              <div class="ins-body">
-                <div class="ins-f hit hit-2"><small>POLICY NUMBER</small><b>NM 4821 9370</b></div>
-                <div class="ins-f ins-right"><small>NAIC NO.</small><b>00000</b></div>
-                <div class="ins-f ins-dates"><span><small>EFFECTIVE</small><b>09/14/2026</b></span><span class="hit hit-3"><small>EXPIRATION</small><b>03/15/2027</b></span></div>
-                <div class="ins-f ins-right"><small>CLAIMS</small><b>1-800-555-0100</b></div>
-                <div class="ins-f"><small>INSURED</small><b>JORDAN A. SAMPLE</b></div>
-                <div class="ins-f"><small>VEHICLE</small><b>2019 HONDA CR-V</b></div>
-                <span class="sample-stamp">SAMPLE</span>
-              </div>
-              <div class="ins-foot">KEEP THIS CARD IN YOUR VEHICLE</div>
-            </div>
-            <span class="scanline"></span>
-            <span class="corner c-tl"></span><span class="corner c-tr"></span><span class="corner c-bl"></span><span class="corner c-br"></span>
-          </div>
-          <div class="check-card">
-            <p class="cc-small">We read this expiry date from your photo.</p>
-            <p class="cc-date">March 15, 2027</p>
-            <p class="cc-q">Is that right?</p>
-            <ul class="cc-rows">
-              <li><span>Document</span><b>Insurance card</b></li>
-              <li><span>Expires</span><b><svg class="spark"><use href="#i-sparkles"/></svg>Mar 15, 2027</b></li>
-              <li><span>Insurer</span><b><svg class="spark"><use href="#i-sparkles"/></svg>NORTHFIELD MUTUAL</b></li>
-              <li><span>Policy number</span><b>NM 4821 9370</b></li>
-            </ul>
-            <span class="cc-btn">Yes, save it</span>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <!-- 02 Show -->
-    <article class="file step step-flip" data-anim>
-      <p class="tab"><span>02</span>Show</p>
-      <div class="file-body step-grid">
-        <div class="step-copy">
-          <h3 class="display-m">Show them in one tap.</h3>
-          <p>One big button opens your papers full screen, with the brightness turned up. Swipe between registration, insurance card and license.</p>
-        </div>
-        <div class="step-art show-art" aria-hidden="true">
-          <div class="show-glow"></div>
-          <figure class="phone phone-show">
-            <div class="screen-stack">
-              <img class="scr-home" src="assets/screens/home-900.webp" srcset="assets/screens/home-450.webp 450w, assets/screens/home-900.webp 900w" sizes="260px" width="900" height="1955" loading="lazy" alt="">
-              <img class="scr-show" src="assets/screens/show-900.webp" srcset="assets/screens/show-450.webp 450w, assets/screens/show-900.webp 900w" sizes="260px" width="900" height="1955" loading="lazy" alt="">
-              <span class="tap"></span>
-            </div>
-          </figure>
-          <span class="bright-chip"><svg><use href="#i-sun"/></svg>Brightness up</span>
-        </div>
-      </div>
-    </article>
-
-    <!-- 03 Remind -->
-    <article class="file step" data-anim>
-      <p class="tab"><span>03</span>Remind</p>
-      <div class="file-body step-grid">
-        <div class="step-copy">
-          <h3 class="display-m">A reminder before anything expires.</h3>
-          <p>30 days before, 7 days before and on the day, at 9:00 in the morning. Tap a registration reminder to renew online.</p>
-        </div>
-        <div class="step-art remind-art" aria-hidden="true">
-          <ol class="timeline">
-            <li class="note-row"><span class="when">Nov 9<small>30 days before</small></span>
-              <div class="notif"><img src="assets/apple-touch-icon.png" alt="" width="180" height="180" loading="lazy"><div><p class="n-app">CAR PAPERS<span>9:00 AM</span></p><p class="n-title">Registration expires next month</p><p class="n-body">Dec 9 is 30 days away. Tap to renew online.</p></div></div></li>
-            <li class="note-row"><span class="when">Dec 2<small>7 days before</small></span>
-              <div class="notif"><img src="assets/apple-touch-icon.png" alt="" width="180" height="180" loading="lazy"><div><p class="n-app">CAR PAPERS<span>9:00 AM</span></p><p class="n-title">One week left on your registration</p><p class="n-body">It expires Dec 9. Tap to renew online.</p></div></div></li>
-            <li class="note-row"><span class="when">Dec 9<small>On the day</small></span>
-              <div class="notif"><img src="assets/apple-touch-icon.png" alt="" width="180" height="180" loading="lazy"><div><p class="n-app">CAR PAPERS<span>9:00 AM</span></p><p class="n-title">Your registration expires today</p><p class="n-body">Tap to renew online now.</p></div></div></li>
-          </ol>
-        </div>
-      </div>
-    </article>
+    <ol class="how-steps">
+      <li class="step is-active" data-step="1">
+        <p class="step-num">Step 1</p>
+        <h3>Take a photo.</h3>
+        <p>Scan the paper or pick a screenshot. Car Papers reads the expiry date, and on iPhones with Apple Intelligence it fills in your insurer too. You check everything before it's saved.</p>
+        <figure class="phone step-phone"><img src="assets/screens/check-900.webp" srcset="assets/screens/check-450.webp 450w, assets/screens/check-900.webp 900w" sizes="64vw" width="900" height="1955" loading="lazy" alt="The Check the details screen after reading an insurance card."></figure>
+      </li>
+      <li class="step" data-step="2">
+        <p class="step-num">Step 2</p>
+        <h3>Show them in one&nbsp;tap.</h3>
+        <p>One big button opens your papers full screen, with the brightness turned up. Swipe between registration, insurance card and license.</p>
+        <figure class="phone step-phone"><img src="assets/screens/show-900.webp" srcset="assets/screens/show-450.webp 450w, assets/screens/show-900.webp 900w" sizes="64vw" width="900" height="1955" loading="lazy" alt="Show mode on the insurance card."></figure>
+      </li>
+      <li class="step" data-step="3">
+        <p class="step-num">Step 3</p>
+        <h3>Get a reminder in&nbsp;time.</h3>
+        <p>30 days before, 7 days before and on the day, at 9:00 in the morning. Tap a registration reminder to renew online.</p>
+        <figure class="phone step-phone"><img src="assets/screens/reminder-900.webp" srcset="assets/screens/reminder-450.webp 450w, assets/screens/reminder-900.webp 900w" sizes="64vw" width="900" height="1955" loading="lazy" alt="A Car Papers reminder on the Lock Screen: One week left on your registration."></figure>
+      </li>
+    </ol>
   </div>
 </section>
 
-<!-- ============ Privacy ============ -->
+<!-- Devices -->
+<section class="devices" id="devices" aria-labelledby="devices-title">
+  <div class="device-scroll" data-device-scroll>
+    <div class="device-stage">
+      <div class="section-head">
+        <p class="eyebrow gradient-text" data-reveal>iPhone. iPhone Duo. Android.</p>
+        <h2 id="devices-title" class="headline" data-reveal>Made for the phone in your&nbsp;pocket.</h2>
+      </div>
+      <div class="device-row">
+        <figure class="dev dev-iphone">
+          <div class="dev-body">
+            <div class="phone iphone-dev">
+              <div class="cycle">
+                <img src="assets/screens/home-900.webp" width="900" height="1955" loading="lazy" alt="Car Papers on iPhone: the home screen.">
+                <img src="assets/screens/show-900.webp" width="900" height="1955" loading="lazy" alt="">
+                <img src="assets/screens/check-900.webp" width="900" height="1955" loading="lazy" alt="">
+              </div>
+              <span class="glare" aria-hidden="true"></span>
+            </div>
+          </div>
+          <figcaption><b>iPhone</b>Every iPhone with iOS 17 or later.</figcaption>
+        </figure>
+
+        <figure class="dev dev-duo">
+          <div class="dev-body">
+            <div class="duo" role="img" aria-label="Car Papers on iPhone Duo. Folded, the outer screen shows your papers. Unfolded, your papers sit on the left and the registration you picked on the right.">
+              <div class="duo-half duo-right"><div class="duo-screen"><img src="assets/devices/duo-right.webp" width="660" height="930" loading="lazy" alt=""></div></div>
+              <div class="duo-flap">
+                <div class="duo-half duo-face duo-front"><div class="duo-screen"><img src="assets/devices/duo-left.webp" width="660" height="930" loading="lazy" alt=""></div></div>
+                <div class="duo-half duo-face duo-back"><div class="duo-screen duo-outer"><img src="assets/devices/duo-outer.webp" width="700" height="1018" loading="lazy" alt=""></div></div>
+              </div>
+              <div class="duo-status" aria-hidden="true"><span>9:41</span><span class="ob-bars"><i></i><i></i><i></i><i></i></span></div>
+              <span class="duo-crease" aria-hidden="true"></span>
+            </div>
+          </div>
+          <figcaption><b>iPhone Duo</b>Folded, it fits one hand. Unfolded, your papers sit on one side and the one you picked on the other.</figcaption>
+        </figure>
+
+        <figure class="dev dev-android">
+          <div class="dev-body">
+            <div class="pixel">
+              <div class="cycle">
+                <img src="assets/devices/android-registration.webp" width="720" height="1616" loading="lazy" alt="A preview of Car Papers for Android: the home screen.">
+                <img src="assets/devices/android-insurance.webp" width="720" height="1616" loading="lazy" alt="">
+                <img src="assets/devices/android-add-document.webp" width="720" height="1616" loading="lazy" alt="">
+                <span class="pixel-status" aria-hidden="true"><b>9:41</b><svg viewBox="0 0 60 16"><g fill="currentColor"><path d="M8 14.2.6 6.4a10.6 10.6 0 0 1 14.8 0Z"/><path d="M33 1.8v12.4H20.6Z"/><rect x="38" y="3.6" width="19" height="8.8" rx="3"/><rect x="57.6" y="6.1" width="1.9" height="3.8" rx=".9"/></g></svg></span>
+              </div>
+              <span class="punch" aria-hidden="true"></span>
+              <span class="glare" aria-hidden="true"></span>
+            </div>
+          </div>
+          <figcaption><b>Android</b>In development. Preview.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Privacy -->
 <section class="privacy" id="privacy" aria-labelledby="privacy-title">
-  <div class="wrap privacy-grid">
-    <div class="privacy-copy">
-      <h2 id="privacy-title" class="display-l">Nothing leaves your&nbsp;iPhone.</h2>
-      <p class="lead">No account. No sign-up. We never see your documents.</p>
-      <p>Car Papers saves your photos on your iPhone, inside the app, and they move with you in your own iPhone backup. Reading your documents and answering your questions happen on your iPhone too. We have no accounts and no servers, so there is nothing for us to see.</p>
-      <a class="text-link on-dark" href="privacy.html">Read the privacy policy<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  <div class="privacy-inner">
+    <div class="lock-badge" data-scroll aria-hidden="true"><svg><use href="#i-lock"/></svg></div>
+    <h2 id="privacy-title" class="lit" data-lit>Nothing leaves your iPhone. There is no account to make and no server to send anything to. Your photos stay on your iPhone, reading them happens there too, and we never see your documents.</h2>
+
+    <div class="privacy-grid">
+      <figure class="phone privacy-phone" data-reveal><img src="assets/screens/privacy-900.webp" srcset="assets/screens/privacy-450.webp 450w, assets/screens/privacy-900.webp 900w" sizes="(max-width: 734px) 64vw, 300px" width="900" height="1955" loading="lazy" alt="The How your papers are stored screen in Car Papers."></figure>
+      <ul class="points">
+        <li data-reveal><svg aria-hidden="true"><use href="#i-lock"/></svg><h3>Saved on your iPhone.</h3><p>Your photos are saved on your iPhone, inside Car Papers.</p></li>
+        <li data-reveal><svg aria-hidden="true"><use href="#i-phone"/></svg><h3>Part of your own backup.</h3><p>They move with you to your next iPhone in your own iPhone backup.</p></li>
+        <li data-reveal><svg aria-hidden="true"><use href="#i-sparkles"/></svg><h3>Read on your iPhone.</h3><p>Reading your documents and answering your questions happens on your iPhone.</p></li>
+        <li data-reveal><svg aria-hidden="true"><use href="#i-check"/></svg><h3>No accounts. No servers.</h3><p>We cannot see anything you save. No analytics, no ads.</p></li>
+      </ul>
     </div>
-    <div class="privacy-art" data-anim>
-      <div class="report">
-        <p class="r-head"><svg aria-hidden="true"><use href="#logo-light"/></svg><span>Car Papers<small>What we collect from you</small></span></p>
-        <dl class="r-rows">
-          <div><dt>Your photos</dt><dd>Stay on your iPhone</dd></div>
-          <div><dt>Reading and answers</dt><dd>On your iPhone</dd></div>
-          <div><dt>Account</dt><dd>None</dd></div>
-          <div><dt>Servers</dt><dd>None</dd></div>
-          <div><dt>Analytics and ads</dt><dd>None</dd></div>
-        </dl>
-        <p class="stamp" aria-label="Nothing collected"><span>Nothing</span><small>collected</small></p>
-      </div>
-    </div>
+    <p class="privacy-link"><a class="more-link on-dark" href="privacy.html">Read the privacy policy<svg aria-hidden="true"><use href="#i-chevron"/></svg></a></p>
   </div>
 </section>
 
-<!-- ============ Also included ============ -->
-<section class="more" id="more" aria-labelledby="more-title">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2 id="more-title" class="display-l">Also in the folder.</h2>
-    </div>
+<!-- Even more -->
+<section class="more" aria-labelledby="more-title">
+  <div class="section-head">
+    <h2 id="more-title" class="headline" data-reveal>Even more in the&nbsp;folder.</h2>
+  </div>
+  <div class="bento">
+    <article class="tile tile-dark tile-ask" data-reveal>
+      <div class="tile-copy">
+        <p class="tile-eyebrow"><svg aria-hidden="true"><use href="#i-sparkles"/></svg>Ask</p>
+        <h3>Ask your papers a&nbsp;question.</h3>
+        <p>Type a question like “What's my policy number?” and get the answer from your saved papers. On iPhones with Apple Intelligence.</p>
+      </div>
+      <figure class="phone tile-phone"><img src="assets/screens/ask-900.webp" srcset="assets/screens/ask-450.webp 450w, assets/screens/ask-900.webp 900w" sizes="260px" width="900" height="1955" loading="lazy" alt="Car Papers answering What's my policy number?"></figure>
+    </article>
 
-    <div class="more-grid">
-      <article class="file file-ask" data-anim>
-        <p class="tab"><span>Ask</span></p>
-        <div class="file-body">
-          <div class="file-copy">
-            <h3 class="title">Ask your papers a question</h3>
-            <p>Type a question and get the answer from your saved papers. On iPhones with Apple Intelligence.</p>
-          </div>
-          <div class="ask-art" aria-hidden="true">
-            <p class="ask-field"><span class="typed">What's my policy number?</span><span class="caret"></span></p>
-            <div class="ask-answer">
-              <p>Your policy number is NM 4821 9370, with Northfield Mutual.</p>
-              <p class="ask-link">From your insurance card<svg><use href="#i-arrow"/></svg></p>
-              <p class="ask-meta"><svg><use href="#i-sparkles"/></svg>Answered on your iPhone</p>
+    <article class="tile tile-widgets" data-reveal>
+      <div class="tile-copy">
+        <p class="tile-eyebrow">Widgets</p>
+        <h3>One tap from your Home&nbsp;Screen.</h3>
+        <p>Widgets for the Home Screen and Lock Screen, and a button in Control Center.</p>
+      </div>
+      <figure class="phone tile-phone"><img src="assets/screens/widgets-900.webp" srcset="assets/screens/widgets-450.webp 450w, assets/screens/widgets-900.webp 900w" sizes="240px" width="900" height="1955" loading="lazy" alt="Car Papers widgets on an iPhone Home Screen."></figure>
+    </article>
+
+    <article class="tile tile-license" data-reveal>
+      <div class="tile-copy">
+        <p class="tile-eyebrow">License</p>
+        <h3>A backup copy of your&nbsp;license.</h3>
+        <p>For your records if you lose your wallet. Keep carrying your real license.</p>
+      </div>
+      <div class="tile-art" aria-hidden="true">
+        <div class="licstack">
+          <div class="lic lic-old2"></div>
+          <div class="lic lic-old1"></div>
+          <div class="lic lic-front">
+            <div class="lic-band"><span>Driver license</span><i></i></div>
+            <div class="lic-body">
+              <div class="lic-photo"><svg><use href="#i-person"/></svg></div>
+              <div class="lic-lines"><i></i><i></i><i></i><span class="pill">Current</span></div>
             </div>
           </div>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <article class="file file-widgets" data-anim>
-        <p class="tab"><span>Widgets</span></p>
-        <div class="file-body">
-          <div class="file-copy">
-            <h3 class="title">One tap from your Home Screen</h3>
-            <p>Widgets for the Home Screen and Lock Screen, and a button in Control Center.</p>
-          </div>
-          <div class="widget-art" aria-hidden="true">
-            <div class="w-small">
-              <span class="w-pill"><svg><use href="#i-doc"/></svg>Renew soon</span>
-              <b class="w-num">14</b>
-              <span class="w-sub">days left</span>
-              <span class="w-doc">Registration</span>
-            </div>
-            <div class="w-small w-blue">
-              <span class="w-ico"><svg><use href="#i-card"/></svg></span>
-              <b class="w-show">Show my papers</b>
-            </div>
-          </div>
+    <article class="tile tile-cars" data-reveal>
+      <div class="tile-copy">
+        <p class="tile-eyebrow">Cars</p>
+        <h3>More than one&nbsp;car.</h3>
+        <p>Each car keeps its own registration and insurance card.</p>
+      </div>
+      <div class="tile-art" aria-hidden="true">
+        <div class="carlist">
+          <div class="carrow is-on"><span class="car-ico"><svg><use href="#i-car"/></svg></span><span class="carname">2019 Honda CR-V<small>Plate ABC 1234</small></span><svg class="car-tick"><use href="#i-check"/></svg></div>
+          <div class="carrow"><span class="car-ico"><svg><use href="#i-car"/></svg></span><span class="carname">2016 Toyota Camry<small>Plate XYZ 5678</small></span></div>
+          <div class="carrow car-add"><span class="car-ico"><svg><use href="#i-plus"/></svg></span><span class="carname">Add a car</span></div>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <article class="file file-license" data-anim>
-        <p class="tab"><span>License</span></p>
-        <div class="file-body">
-          <div class="file-copy">
-            <h3 class="title">A backup copy of your license</h3>
-            <p>For your records if you lose your wallet. It does not replace the card, so keep carrying your real license.</p>
-          </div>
-          <div class="lic-art" aria-hidden="true">
-            <div class="licstack">
-              <div class="lic lic-old2"></div>
-              <div class="lic lic-old1"></div>
-              <div class="lic lic-front">
-                <div class="lic-band"><span>Driver license</span><i></i></div>
-                <div class="lic-body">
-                  <div class="lic-photo"><svg><use href="#i-person"/></svg></div>
-                  <div class="lic-lines"><i></i><i></i><i></i><span class="pill pill-green">Current</span></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="file file-cars" data-anim>
-        <p class="tab"><span>Cars</span></p>
-        <div class="file-body">
-          <div class="file-copy">
-            <h3 class="title">More than one car</h3>
-            <p>Each car keeps its own registration and insurance card.</p>
-          </div>
-          <div class="car-art" aria-hidden="true">
-            <div class="carlist">
-              <span class="car-sel"></span>
-              <div class="carrow"><span class="car-ico"><svg><use href="#i-car"/></svg></span><span class="carname">2019 Honda CR-V<small>Plate ABC 1234</small></span><svg class="car-tick car-tick-1"><use href="#i-check"/></svg></div>
-              <div class="carrow"><span class="car-ico"><svg><use href="#i-car"/></svg></span><span class="carname">2016 Toyota Camry<small>Plate XYZ 5678</small></span><svg class="car-tick car-tick-2"><use href="#i-check"/></svg></div>
-              <div class="carrow car-add"><span class="car-ico"><svg><use href="#i-plus"/></svg></span><span class="carname">Add a car</span></div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="file file-siri" data-anim>
-        <p class="tab"><span>Siri</span></p>
-        <div class="file-body">
-          <div class="file-copy">
-            <h3 class="title">Just ask Siri</h3>
-            <p>Say “Show my papers in Car Papers”, or ask when your registration expires.</p>
-          </div>
-          <div class="siri-art" aria-hidden="true">
-            <div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            <p class="siri-q">“When does my registration expire in Car Papers?”</p>
-            <p class="siri-a"><svg><use href="#logo-light"/></svg><span>Your registration for the 2019 Honda CR-V expires on December 9, 2026. That is 14 days from now.</span></p>
-          </div>
-        </div>
-      </article>
-    </div>
+    <article class="tile tile-siri" data-reveal>
+      <div class="tile-copy">
+        <p class="tile-eyebrow">Siri</p>
+        <h3>Just ask&nbsp;Siri.</h3>
+        <p>Say “Show my papers in Car Papers”, or ask when your registration expires.</p>
+      </div>
+      <div class="tile-art" aria-hidden="true">
+        <div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <p class="siri-quote">“When does my registration expire in Car Papers?”</p>
+      </div>
+    </article>
   </div>
 </section>
 
-<!-- ============ Free ============ -->
-<section class="free" id="free" aria-labelledby="free-title">
-  <div class="wrap free-grid">
-    <div class="free-copy">
-      <h2 id="free-title" class="display-xxl">Free.</h2>
-      <p class="lead">No ads. No subscription. No in-app purchases. No account to make. Just your papers, on your iPhone.</p>
-      <p class="store-status"><span class="live-dot" aria-hidden="true"></span><span><strong>Free for iPhone.</strong> Coming soon to the App&nbsp;Store.</span></p>
-      <p class="fine">Needs iOS 17 or later. Filling in your insurer, and asking questions, need an iPhone with Apple Intelligence.</p>
-    </div>
-    <div class="free-art" data-anim aria-hidden="true">
-      <div class="printer"><span class="slot"></span></div>
-      <div class="receipt-clip">
-        <div class="receipt">
-          <p class="rc-title">CAR PAPERS</p>
-          <p class="rc-sub">For iPhone</p>
-          <p class="rc-rule"></p>
-          <p class="rc-line"><span>Car Papers app</span><span>$0.00</span></p>
-          <p class="rc-line"><span>Subscription</span><span>None</span></p>
-          <p class="rc-line"><span>In-app purchases</span><span>None</span></p>
-          <p class="rc-line"><span>Ads</span><span>None</span></p>
-          <p class="rc-line"><span>Account</span><span>Not needed</span></p>
-          <p class="rc-rule"></p>
-          <p class="rc-total"><span>Total</span><span>$0.00</span></p>
-          <p class="rc-foot">Nothing to pay.<br>Nothing to sign up for.</p>
-          <p class="rc-bars"></p>
-        </div>
-      </div>
-    </div>
+<!-- Free -->
+<section class="free" aria-labelledby="free-title">
+  <h2 id="free-title" class="free-title" data-scroll>Free.</h2>
+  <p class="free-sub" data-reveal>Nothing to pay. Nothing to sign up&nbsp;for.</p>
+  <ul class="free-list">
+    <li data-reveal><svg aria-hidden="true"><use href="#seal"/></svg>No subscription</li>
+    <li data-reveal><svg aria-hidden="true"><use href="#seal"/></svg>No ads</li>
+    <li data-reveal><svg aria-hidden="true"><use href="#seal"/></svg>No in-app purchases</li>
+    <li data-reveal><svg aria-hidden="true"><use href="#seal"/></svg>No account to make</li>
+  </ul>
+  <div class="ctas free-ctas" data-reveal>
+    <a class="button" href="assets/video/car-papers-demo.mp4" data-film><svg aria-hidden="true"><use href="#i-play"/></svg>Watch the film</a>
+    <!-- At launch, replace this line with Apple's official App Store badge, linked to https://apps.apple.com/app/id6838867229 -->
+    <p class="soon">Coming soon to the App Store.</p>
   </div>
 </section>
 
-<!-- ============ Questions ============ -->
-<section class="faq" id="faq" aria-labelledby="faq-title">
-  <div class="wrap faq-grid">
-    <div class="sec-head">
-      <h2 id="faq-title" class="display-l">Questions, answered plainly.</h2>
-      <p class="lead">Something else? Email <a href="mailto:jaiden@narb.cc">jaiden@narb.cc</a>. We read every message.</p>
-    </div>
-    <div class="faq-list">
-      <details>
-        <summary><span class="q-num">01</span><span class="q">Is it really free?</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>Yes. There are no ads, no subscription and no in-app purchases.</p>
-      </details>
-      <details>
-        <summary><span class="q-num">02</span><span class="q">Do I need to make an account?</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>No. There is no sign-up, no email and no password. Open the app and add a photo.</p>
-      </details>
-      <details>
-        <summary><span class="q-num">03</span><span class="q">Can you see my documents?</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>No. Your photos are saved on your iPhone, inside Car Papers. We have no accounts and no servers, so there is nothing for us to see.</p>
-      </details>
-      <details>
-        <summary><span class="q-num">04</span><span class="q">What happens when I get a new iPhone?</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>Your papers are part of your own iPhone backup. Set up your new iPhone from that backup and they come with you.</p>
-      </details>
-      <details>
-        <summary><span class="q-num">05</span><span class="q">Is the photo of my license a legal ID?</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>No. It is a backup copy for your records, not a legal ID. Keep carrying your real license.</p>
-      </details>
-      <details>
-        <summary><span class="q-num">06</span><span class="q">Will my state accept papers on my phone?</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>Rules for showing registration and insurance on a phone differ from state to state. Car Papers is not a government app, so check what your state accepts.</p>
-      </details>
-      <details>
-        <summary><span class="q-num">07</span><span class="q">Which iPhones does it work on?</span><span class="pm" aria-hidden="true"></span></summary>
-        <p>Any iPhone with iOS 17 or later, including iPhone Duo. Reading the expiry date works on all of them. Filling in your insurer and policy number, and asking questions, need an iPhone with Apple Intelligence.</p>
-      </details>
-    </div>
+<!-- Questions -->
+<section class="questions" id="questions" aria-labelledby="questions-title">
+  <div class="section-head">
+    <h2 id="questions-title" class="headline" data-reveal>Questions, answered.</h2>
   </div>
-
-  <div class="wrap">
-    <aside class="note" aria-labelledby="note-title">
-      <svg class="note-icon" aria-hidden="true"><use href="#i-info"/></svg>
-      <div>
-        <h2 id="note-title">Good to know</h2>
-        <p><strong>Car Papers is not a government app.</strong> A photo of your driver's license is a backup copy for your records, not a legal ID, so keep carrying your real license. Rules for showing registration and insurance on a phone differ from state to state. Check what your state accepts.</p>
-      </div>
-    </aside>
+  <div class="faq">
+    <details>
+      <summary>Is it really free?<span class="pm" aria-hidden="true"></span></summary>
+      <p>Yes. There are no ads, no subscription and no in-app purchases.</p>
+    </details>
+    <details>
+      <summary>How do I get started?<span class="pm" aria-hidden="true"></span></summary>
+      <p>Download it and open it. There is no account to make. Name your car, add a photo of your registration or insurance card, and choose whether you want reminders. You can skip any of it and come back later.</p>
+    </details>
+    <details>
+      <summary>Do I need to make an account?<span class="pm" aria-hidden="true"></span></summary>
+      <p>No. There is no sign-up, no email and no password. Open the app and add a photo.</p>
+    </details>
+    <details>
+      <summary>Can you see my documents?<span class="pm" aria-hidden="true"></span></summary>
+      <p>No. Your photos are saved on your iPhone, inside Car Papers. We have no accounts and no servers, so there is nothing for us to see.</p>
+    </details>
+    <details>
+      <summary>What happens when I get a new iPhone?<span class="pm" aria-hidden="true"></span></summary>
+      <p>Your papers are part of your own iPhone backup. Set up your new iPhone from that backup and they come with you.</p>
+    </details>
+    <details>
+      <summary>Is the photo of my license a legal ID?<span class="pm" aria-hidden="true"></span></summary>
+      <p>No. It is a backup copy for your records, not a legal ID. Keep carrying your real license.</p>
+    </details>
+    <details>
+      <summary>Will my state accept papers on my phone?<span class="pm" aria-hidden="true"></span></summary>
+      <p>Rules for showing registration and insurance on a phone differ from state to state. Car Papers is not a government app, so check what your state accepts.</p>
+    </details>
+    <details>
+      <summary>Which iPhones does it work on?<span class="pm" aria-hidden="true"></span></summary>
+      <p>Any iPhone with iOS 17 or later, including iPhone Duo. Reading the expiry date works on all of them. Filling in your insurer and policy number, and asking questions, need an iPhone with Apple Intelligence.</p>
+    </details>
+    <details>
+      <summary>Is there an Android version?<span class="pm" aria-hidden="true"></span></summary>
+      <p>It's in development. For now, Car Papers is for iPhone. The Android version will also need no sign-in, and nothing will leave your phone.</p>
+    </details>
   </div>
+  <p class="questions-more">Something else? Email <a href="mailto:jaiden@narb.cc">jaiden@narb.cc</a>. We read every message.</p>
 </section>
 
 </main>
 
-<footer class="site-footer">
-  <svg class="footer-mark" aria-hidden="true" viewBox="0 0 64 64"><use href="#logo-dark"/></svg>
-  <div class="wrap">
-    <div class="footer-top">
-      <a class="brand" href="./"><svg aria-hidden="true"><use href="#logo-dark"/></svg><span>Car Papers</span></a>
-      <p class="footer-line">Your car papers, <span>ready when you need them.</span></p>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footnotes">
+      <p><b>Good to know.</b> Car Papers is not a government app. A photo of your driver's license is a backup copy for your records, not a legal ID, so keep carrying your real license. Rules for showing registration and insurance on a phone differ from state to state. Check what your state accepts.</p>
+      <p>Requires iOS 17 or later. Filling in your insurer and policy number, and Ask, need an iPhone with Apple Intelligence. The Android version is in development; its pictures are a preview of the home screen. Screens show made-up sample documents.</p>
     </div>
-    <div class="footer-bottom">
-      <nav class="footer-nav" aria-label="Footer">
-        <a href="privacy.html">Privacy policy</a>
-        <a href="support.html">Support</a>
-        <a href="mailto:jaiden@narb.cc">jaiden@narb.cc</a>
-      </nav>
-      <p class="legal">© 2026 narb LLC · <a href="https://narb.cc">A narb product</a></p>
+    <div class="footer-bar">
+      <p>Copyright © 2026 narb LLC. All rights reserved.</p>
+      <nav aria-label="Footer"><a href="privacy.html">Privacy Policy</a><a href="support.html">Support</a><a href="mailto:jaiden@narb.cc">Contact</a><a href="https://narb.cc">narb</a></nav>
     </div>
   </div>
 </footer>
 
-<script>
-  // Plays each graphic's animation when it scrolls into view, and again the next time.
-  // Nothing is sent anywhere; without this script every graphic simply shows its finished state.
-  (function () {
-    var items = document.querySelectorAll('[data-anim]');
-    if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      items.forEach(function (el) { el.classList.add('in'); });
-      return;
-    }
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting && e.intersectionRatio >= 0.3) e.target.classList.add('in');
-        else if (!e.isIntersecting) e.target.classList.remove('in');
-      });
-    }, { threshold: [0, 0.3] });
-    items.forEach(function (el) { io.observe(el); });
-  })();
+<dialog class="film" aria-label="The Car Papers film">
+  <div class="film-inner">
+    <video preload="none" playsinline controls poster="assets/video/demo-poster.webp" width="720" height="1280">
+      <source src="assets/video/car-papers-demo.mp4" type="video/mp4">
+      <track kind="captions" src="assets/video/car-papers-demo.vtt" srclang="en" label="English">
+    </video>
+    <button class="film-close" type="button" aria-label="Close the film"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+  </div>
+</dialog>
 
-  // The tour video: a big play button over the poster. The video only downloads when someone presses it.
-  (function () {
-    var video = document.getElementById('demo-video');
-    var button = document.querySelector('.play');
-    if (!video || !button) return;
-    video.removeAttribute('controls');
-    button.hidden = false;
-    button.addEventListener('click', function () {
-      video.controls = true;
-      button.hidden = true;
-      var playing = video.play();
-      if (playing && playing.catch) playing.catch(function () {});
-    });
-    video.addEventListener('ended', function () {
-      video.controls = false;
-      video.load();
-      button.hidden = false;
-    });
-  })();
-</script>
+<script src="apple.js"></script>
 </body>
 </html>
