@@ -562,32 +562,38 @@ dialog.film[open] .film-inner { animation: film-in .5s var(--ease); }
 .pixel-status svg { width: calc(var(--w) * .135); height: auto; }
 .punch { position: absolute; z-index: 2; top: calc(var(--w) * .058); left: 50%; width: calc(var(--w) * .042); height: calc(var(--w) * .042); margin-left: calc(var(--w) * -.021); border-radius: 50%; background: #050505; box-shadow: 0 0 0 1.5px rgba(60, 60, 60, .7); }
 
-/* iPhone Duo: the left half is a flap hinged at the middle. Folded, its back (the outer screen) faces you. */
+/* iPhone Duo: the left half is a lid hinged at the middle. Folded, its back (the outer screen) faces you.
+   The Duo itself is drawn flat, so the lid is always painted over the right half, as it is in life:
+   no depth sorting between two surfaces that touch at the hinge. */
 .dev-duo .dev-body { opacity: var(--d, 1); transform: translateY(calc((1 - var(--d, 1)) * 36px)) scale(calc(.94 + var(--d, 1) * .06)); }
 .dev-duo .dev-body::after { transform: scaleX(calc(.5 + var(--u, 1) * .5)); }
 .duo {
   --hw: calc(var(--s) * 1.2); --bz: calc(var(--hw) * .034); --r: calc(var(--hw) * .11);
-  position: relative; width: calc(var(--hw) * 2); height: calc(var(--hw) * 1.41); transform-style: preserve-3d;
+  position: relative; width: calc(var(--hw) * 2); height: calc(var(--hw) * 1.41); perspective: 1700px;
   transform: translateX(calc((1 - var(--u, 1)) * var(--hw) * -.5)) rotateX(calc((1 - var(--u, 1)) * 9deg));
 }
 .duo-half { position: absolute; top: 0; width: var(--hw); height: 100%; padding: var(--bz); background: linear-gradient(145deg, #4a515f 0%, #191c22 25%, #0c0e12 70%, #2a2f38 100%); }
 .duo-half::after { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; background: #000; opacity: 0; pointer-events: none; }
-.duo-right { left: 50%; padding-left: 0; border-radius: 0 var(--r) var(--r) 0; box-shadow: inset -1px 0 0 rgba(255, 255, 255, .14), inset 0 1px 0 rgba(255, 255, 255, .1), 0 calc(var(--hw) * .1) calc(var(--hw) * .16) calc(var(--hw) * -.07) rgba(0, 0, 0, .32); }
+.duo-right { --hinge: calc((1 - var(--u, 1)) * var(--r) * .6); z-index: 0; left: 50%; padding-left: 0; border-radius: var(--hinge) var(--r) var(--r) var(--hinge); box-shadow: inset -1px 0 0 rgba(255, 255, 255, .14), inset 0 1px 0 rgba(255, 255, 255, .1), 0 calc(var(--hw) * .1) calc(var(--hw) * .16) calc(var(--hw) * -.07) rgba(0, 0, 0, .32); }
 .duo-right::after { opacity: calc((1 - var(--u, 1)) * .4); }
-.duo-flap { position: absolute; left: 0; top: 0; width: var(--hw); height: 100%; transform-origin: right center; transform-style: preserve-3d; transform: translateZ(calc((1 - var(--u, 1)) * 2px)) rotateY(calc((1 - var(--u, 1)) * 180deg)); }
-.duo-face { inset: 0; width: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.duo-flap { position: absolute; z-index: 1; left: 0; top: 0; width: var(--hw); height: 100%; transform-origin: right center; transform-style: preserve-3d; transform: rotateY(calc((1 - var(--u, 1)) * 180deg)); }
+.duo-face { z-index: 0; inset: 0; width: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; }
 .duo-front { padding-right: 0; border-radius: var(--r) 0 0 var(--r); box-shadow: inset 1px 0 0 rgba(255, 255, 255, .14), inset 0 1px 0 rgba(255, 255, 255, .1), 0 calc(var(--hw) * .1) calc(var(--hw) * .16) calc(var(--hw) * -.07) rgba(0, 0, 0, .32); }
 .duo-front::after { opacity: calc((1 - var(--u, 1)) * .6); }
-.duo-back { transform: rotateY(180deg); border-radius: calc(var(--r) * .45) var(--r) var(--r) calc(var(--r) * .45); box-shadow: inset -1px 0 0 rgba(255, 255, 255, .14), inset 0 1px 0 rgba(255, 255, 255, .1), 0 calc(var(--hw) * .1) calc(var(--hw) * .16) calc(var(--hw) * -.07) rgba(0, 0, 0, .32); }
+.duo-back { transform: rotateY(180deg); border-radius: calc(var(--r) * .6) var(--r) var(--r) calc(var(--r) * .6); box-shadow: inset -1px 0 0 rgba(255, 255, 255, .14), inset 0 1px 0 rgba(255, 255, 255, .1), 0 calc(var(--hw) * .1) calc(var(--hw) * .16) calc(var(--hw) * -.07) rgba(0, 0, 0, .32); }
 .duo-back::after { opacity: calc(var(--u, 1) * .9); }
 .duo-screen { position: relative; height: 100%; overflow: hidden; padding-top: calc(var(--hw) * .105); background: #f4f6fa; }
 .duo-front .duo-screen { border-radius: calc(var(--r) * .78) 0 0 calc(var(--r) * .78); }
 .duo-right .duo-screen { border-radius: 0 calc(var(--r) * .78) calc(var(--r) * .78) 0; }
 .duo-screen img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-.duo-outer { padding-top: 0; border-radius: calc(var(--r) * .35) calc(var(--r) * .72) calc(var(--r) * .72) calc(var(--r) * .35); }
-.duo-outer img { object-position: top left; }
-.duo-status { position: absolute; z-index: 2; left: var(--bz); right: var(--bz); top: var(--bz); display: flex; align-items: center; justify-content: space-between; height: calc(var(--hw) * .105); padding: 0 calc(var(--hw) * .1); font-size: calc(var(--hw) * .05); font-weight: 600; letter-spacing: -.01em; color: #16233b; transform: translateZ(3px); opacity: clamp(0, calc((var(--u, 1) - .8) * 5), 1); }
-.duo-crease { position: absolute; z-index: 2; left: 50%; top: var(--bz); bottom: var(--bz); width: 8px; margin-left: -4px; background: linear-gradient(90deg, rgba(13, 27, 62, 0), rgba(13, 27, 62, .14), rgba(13, 27, 62, 0)); transform: translateZ(3px); opacity: clamp(0, calc((var(--u, 1) - .7) * 3.4), 1); }
+.duo-outer { border-radius: calc(var(--r) * .45) calc(var(--r) * .78) calc(var(--r) * .78) calc(var(--r) * .45); }
+.duo-outer-status { position: absolute; z-index: 1; top: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: space-between; height: calc(var(--hw) * .105); padding: 0 calc(var(--hw) * .085) 0 calc(var(--hw) * .095); font-size: calc(var(--hw) * .05); font-weight: 600; letter-spacing: -.01em; color: #16233b; }
+.duo-time, .duo-bars { position: absolute; z-index: 1; top: 0; display: flex; align-items: center; height: calc(var(--hw) * .105); font-size: calc(var(--hw) * .05); font-weight: 600; letter-spacing: -.01em; color: #16233b; }
+.duo-time { left: calc(var(--hw) * .095); }
+.duo-bars { right: calc(var(--hw) * .085); }
+.duo-front .duo-screen::after, .duo-right .duo-screen::after { content: ""; position: absolute; z-index: 1; top: 0; bottom: 0; width: 7px; pointer-events: none; }
+.duo-front .duo-screen::after { right: 0; background: linear-gradient(90deg, rgba(13, 27, 62, 0), rgba(13, 27, 62, .11)); }
+.duo-right .duo-screen::after { left: 0; background: linear-gradient(90deg, rgba(13, 27, 62, .11), rgba(13, 27, 62, 0)); }
 
 /* ---------- Setup and device motion ---------- */
 
@@ -601,7 +607,8 @@ dialog.film[open] .film-inner { animation: film-in .5s var(--ease); }
   .ob-phone.in .ob-2 { animation-delay: -12.45s; }
   .ob-phone.in .ob-3 { animation-delay: -9.45s; }
   .ob-phone.in .ob-4 { animation-delay: -6.45s; }
-  .ob-phone.in .ob-5 { animation-delay: -3.45s; }
+  .ob-phone.in .ob-5 { animation-delay: -3.45s; animation-name: ob-last; }
+  .ob-phone.in .ob-1 { animation-name: ob-first; } /* the loop restarts with a crossfade, not a push */
   .ob-phone.in .ob-tap { animation: ob-tap 15s ease-out infinite both; animation-delay: -.45s; }
   .ob-phone.in .ob-2 .ob-tap { animation-delay: -12.45s; }
   .ob-phone.in .ob-3 .ob-tap { animation-delay: -9.45s; }
@@ -614,11 +621,26 @@ dialog.film[open] .film-inner { animation: film-in .5s var(--ease); }
   .dev.in .cycle img:nth-child(3) { animation: cycle-c 10.5s ease-in-out infinite both; }
 }
 
+.resting, .resting * { animation-play-state: paused !important; }
+
 @keyframes ob-push {
   0% { transform: translateX(100%); opacity: 1; z-index: 2; animation-timing-function: cubic-bezier(.2, .8, .25, 1); }
   3%, 20% { transform: translateX(0); opacity: 1; z-index: 2; }
   20.01% { transform: translateX(0); opacity: 1; z-index: 1; animation-timing-function: cubic-bezier(.2, .8, .25, 1); }
   23% { transform: translateX(-30%); opacity: .35; z-index: 1; }
+  23.01%, 100% { transform: translateX(100%); opacity: 1; z-index: 2; }
+}
+@keyframes ob-first {
+  0% { transform: translateX(0); opacity: 0; z-index: 2; }
+  3%, 20% { transform: translateX(0); opacity: 1; z-index: 2; }
+  20.01% { transform: translateX(0); opacity: 1; z-index: 1; animation-timing-function: cubic-bezier(.2, .8, .25, 1); }
+  23% { transform: translateX(-30%); opacity: .35; z-index: 1; }
+  23.01%, 100% { transform: translateX(100%); opacity: 1; z-index: 2; }
+}
+@keyframes ob-last {
+  0% { transform: translateX(100%); opacity: 1; z-index: 2; animation-timing-function: cubic-bezier(.2, .8, .25, 1); }
+  3%, 20% { transform: translateX(0); opacity: 1; z-index: 2; }
+  20.01%, 23% { transform: translateX(0); opacity: 1; z-index: 1; }
   23.01%, 100% { transform: translateX(100%); opacity: 1; z-index: 2; }
 }
 @keyframes ob-type { 0%, 4% { max-width: 0; animation-timing-function: steps(15, end); } 12%, 96% { max-width: 9.6em; } 96.01%, 100% { max-width: 0; } }

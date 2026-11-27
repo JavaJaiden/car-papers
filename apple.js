@@ -61,9 +61,35 @@
   var ease = function (v) { v = clamp01(v); return v * v * (3 - 2 * v); };
   var span = function (p, from, to) { return ease((p - from) / (to - from)); };
   var put = function (el, name, value) {
-    el.style.setProperty(name, value.toFixed(3));
+    el.style.setProperty(name, value.toFixed(4));
     if (value > 0.97) el.classList.add('in'); // starts the screens cycling, once
   };
+  // The shown values glide towards the ones the scroll position asks for, so the steps of a
+  // mouse wheel turn into smooth motion. The first frame jumps straight there.
+  var goal = { a: 0, d: 0, u: 0, b: 0 };
+  var shown = null;
+  var gliding = false;
+  var lastTime = 0;
+  function showDevices() {
+    put(devIphone, '--a', shown.a);
+    put(devDuo, '--d', shown.d);
+    put(devDuo, '--u', shown.u);
+    put(devAndroid, '--b', shown.b);
+  }
+  function glide(now) {
+    var dt = lastTime ? Math.min(64, now - lastTime) : 16.7;
+    lastTime = now;
+    var k = 1 - Math.pow(1 - 0.17, dt / 16.7); // the same feel at 60 Hz and 120 Hz
+    var moving = false;
+    for (var key in goal) {
+      var gap = goal[key] - shown[key];
+      if (Math.abs(gap) < 0.001) shown[key] = goal[key];
+      else { shown[key] += gap * k; moving = true; }
+    }
+    showDevices();
+    if (moving) window.requestAnimationFrame(glide);
+    else { gliding = false; lastTime = 0; }
+  }
   function placeDevices(vh) {
     if (!devIphone || !devDuo || !devAndroid) return;
     var a, d, u, b;
@@ -85,10 +111,14 @@
       u = span(p, 0.3, 0.66);
       b = span(p, 0.6, 0.88);
     }
-    put(devIphone, '--a', a);
-    put(devDuo, '--d', d);
-    put(devDuo, '--u', u);
-    put(devAndroid, '--b', b);
+    goal.a = a; goal.d = d; goal.u = u; goal.b = b;
+    if (!shown) {
+      shown = { a: a, d: d, u: u, b: b };
+      showDevices();
+    } else if (!gliding) {
+      gliding = true;
+      window.requestAnimationFrame(glide);
+    }
   }
 
   // Scroll-linked effects: --p runs from 0 as an element enters the screen to 1 as it leaves.
@@ -122,6 +152,14 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll);
     frame();
+  }
+
+  // Looping animations (the setup, the device screens, the Siri wave) rest while they are off screen.
+  if (hasIO && !reduce) {
+    var rester = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { entry.target.classList.toggle('resting', !entry.isIntersecting); });
+    });
+    each(document.querySelectorAll('.ob-phone, .dev-iphone, .dev-android, .tile-siri'), function (el) { rester.observe(el); });
   }
 
   // How it works: the phone stays put while the steps scroll past, and its screen follows the step.
