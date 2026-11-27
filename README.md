@@ -17,7 +17,7 @@ Type is the visitor's system font, so SF Pro on Apple devices. Elsewhere Instrum
 ## Motion
 
 - **The setup** (`#ready`): five screens of the app's first run, drawn in HTML in the app's colours and type, pushed in one after another inside an iPhone, with the car name typed and each tap shown. It loops every 15 seconds and restarts with a crossfade.
-- **The devices** (`#devices`): on wide screens the section stays pinned while you scroll. The iPhone turns to face you, the iPhone Duo arrives folded (showing its outer screen) and opens, and the Android preview turns in. On small screens each device plays as it scrolls into view. `apple.js` sets `--a`, `--d`, `--u` and `--b` from 0 to 1 on each figure and eases them towards the scroll position, so a mouse wheel's steps still look smooth; the CSS turns them into motion. The Duo is drawn flat in paint order (the lid always over the right half), which avoids 3D depth-sorting glitches where the two halves meet at the hinge.
+- **The devices** (`#devices`): on wide screens the section stays pinned while you scroll. The iPhone turns to face you, the iPhone Duo arrives folded (its outer screen shows the Car Papers Lock Screen widgets) and opens, and the Android preview turns in. Each device has a body: ten thin slices behind its face (`.slab`), so it shows a metal edge as it turns, and they rest turned a little towards the middle, the Duo a little open. On small screens each device plays as it scrolls into view. `apple.js` sets `--a`, `--d`, `--u` and `--b` from 0 to 1 on each figure and eases them towards the scroll position, so a mouse wheel's steps still look smooth; the CSS turns them into motion. The Duo is drawn flat in paint order (the lid always over the right half), which avoids 3D depth-sorting glitches where the two halves meet at the hinge.
 - Headlines and cards rise in once as they arrive, the privacy statement lights up word by word, and the "How it works" phone follows the steps.
 
 Looping animations pause while they are off screen. Without the script every section shows its finished state, and with Reduce Motion turned on nothing moves.
@@ -26,8 +26,8 @@ Looping animations pause while they are off screen. Without the script every sec
 
 - `assets/screens/`: real screens of the app in demo mode with the made-up sample documents (from `docs/screenshots/raw/` in the app's repository), at 450 and 900 pixels wide.
 - `assets/gallery/`: the seven pictures in the highlights gallery, the same as the App Store screenshots.
-- `assets/devices/`: the two halves of the iPhone Duo's inner screen (the home screen and a registration, cropped from screenshots of the app; the home screen also shows on the outer screen while it is folded), and three screens of the Android version in development. The status bars on the Duo and the Android phone are drawn on the page so they show 9:41 like the others.
-- `assets/video/`: the 38-second film (`docs/video/car-papers-demo.mp4` in the app's repository) re-encoded to 720 × 1280 for the web, its poster frame, and captions of the voiceover. It downloads only when someone presses play.
+- `assets/devices/`: the two halves of the iPhone Duo's inner screen (the home screen and a registration, cropped from screenshots of the app), and three screens of the Android version in development. The Duo's folded Lock Screen with its widgets, and the status bars on the Duo and the Android phone, are drawn on the page (9:41, 14 days, matching the screens).
+- `assets/video/`: the 38-second film, made from this site by `_film/` (its README says how), with the app's voiceover and a music bed of Apple Loops; its poster frame; and captions of the voiceover. It downloads only when someone presses play.
 - `assets/og-image.jpg`: the 1200 × 630 picture shown when the page is shared.
 - `assets/favicon.svg`, `favicon-32.png`, `apple-touch-icon.png`: the app icon.
 

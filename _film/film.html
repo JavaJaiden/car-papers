@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080">
+<title>Car Papers: the film</title>
+<!-- The website as a 38-second film. build.mjs renders it frame by frame; open it with ?t=12.5 to see one moment. -->
+<link rel="stylesheet" href="../apple.css">
+<link rel="stylesheet" href="film.css">
+</head>
+<body>
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="g-l-front" x1="0" y1="31" x2="0" y2="55" gradientUnits="userSpaceOnUse"><stop stop-color="#2F60D4"/><stop offset="1" stop-color="#2552C4"/></linearGradient>
+    <linearGradient id="g-l-shade" x1="0" y1="27.5" x2="0" y2="31" gradientUnits="userSpaceOnUse"><stop stop-color="#0D1B3E" stop-opacity="0"/><stop offset="1" stop-color="#0D1B3E" stop-opacity=".12"/></linearGradient>
+  </defs>
+  <symbol id="logo" viewBox="0 0 64 64">
+    <path d="M6 18a5 5 0 0 1 5-5h10.6c1.7 0 3 .7 4 2.1l1.6 2.3c.9 1.3 2.1 2.1 3.8 2.1H53a5 5 0 0 1 5 5V50a5 5 0 0 1-5 5H11a5 5 0 0 1-5-5Z" fill="#1D3F8F"/>
+    <rect x="19" y="7" width="33" height="40" rx="3.5" fill="#fff" stroke="#C9D3E3" stroke-width="1.2"/>
+    <rect x="24.5" y="13" width="21" height="3.4" rx="1.7" fill="#EEF2F8"/>
+    <rect x="24.5" y="19.5" width="15" height="3.4" rx="1.7" fill="#EEF2F8"/>
+    <rect x="19" y="27.5" width="33" height="3.5" fill="url(#g-l-shade)"/>
+    <path d="M5.75 43 4.902 34.863A3.5 3.5 0 0 1 8.384 31h47.232a3.5 3.5 0 0 1 3.482 3.863L57.467 50.518A5 5 0 0 1 52.494 55H11.506a5 5 0 0 1-4.973-4.482Z" fill="url(#g-l-front)"/>
+    <rect x="8.5" y="31" width="47" height=".5" fill="#fff" fill-opacity=".35"/>
+    <circle cx="47" cy="33" r="10" fill="#fff"/>
+    <circle cx="47" cy="33" r="8" fill="#2E8B57"/>
+    <path d="M43 33.2 45.8 36 51 30.2" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="seal" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="12" fill="#fff"/>
+    <circle cx="12" cy="12" r="9.6" fill="#2E8B57"/>
+    <path d="M7.4 12.3 10.6 15.5 16.6 8.8" fill="none" stroke="#fff" stroke-width="2.9" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="M9.5 6 15.5 12 9.5 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="M14.5 6 8.5 12 14.5 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.6v12.8a1 1 0 0 0 1.5.86l10.4-6.4a1 1 0 0 0 0-1.72L9.5 4.74A1 1 0 0 0 8 5.6Z" fill="currentColor"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6.5 6.5 17.5 17.5M17.5 6.5 6.5 17.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="i-sparkles" viewBox="0 0 24 24"><g fill="currentColor"><path d="M10 6Q11.3 12.2 17.5 13.5 11.3 14.8 10 21 8.7 14.8 2.5 13.5 8.7 12.2 10 6Z"/><path d="M18 2.4Q18.7 5.3 21.6 6 18.7 6.7 18 9.6 17.3 6.7 14.4 6 17.3 5.3 18 2.4Z"/><path d="M19.5 15.3Q19.95 17.05 21.7 17.5 19.95 17.95 19.5 19.7 19.05 17.95 17.3 17.5 19.05 17.05 19.5 15.3Z"/></g></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="10.5" width="14" height="10" rx="2.6"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></g></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="6.5" y="2.5" width="11" height="19" rx="2.8"/><path d="M10.6 5.6h2.8"/></g></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5 9.6 17.1 19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-person" viewBox="0 0 24 24"><g fill="currentColor"><circle cx="12" cy="8.6" r="4.1"/><path d="M4.4 20.5c.8-4.1 3.8-6.6 7.6-6.6s6.8 2.5 7.6 6.6Z"/></g></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.6 6.9 8a2.3 2.3 0 0 1 2.1-1.4h6a2.3 2.3 0 0 1 2.1 1.4l1.9 4.6"/><rect x="3.5" y="12.6" width="17" height="5.4" rx="1.8"/><path d="M6.4 18v1.7M17.6 18v1.7M7 15.3h1.6M15.4 15.3H17"/></g></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-card-s" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5.5" width="19" height="13" rx="2.6"/><path d="M2.5 9.6h19M6 14.6h4"/></g></symbol>
+  <symbol id="i-bell-s" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 16.5V11a5.5 5.5 0 0 1 11 0v5.5l1.6 2.1H4.9Z"/><path d="M10 21.2h4"/></g></symbol>
+  <symbol id="i-doc-s" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Z"/><path d="M14 3v4h4M9 12h6M9 16h4"/></g></symbol>
+  <symbol id="i-shield-s" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 19 6v5.6c0 4.3-2.9 8-7 9.4-4.1-1.4-7-5.1-7-9.4V6l7-3Z"/><path d="m9 12 2.2 2.2L15.2 10"/></g></symbol>
+  <symbol id="i-license-s" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.6"/><circle cx="8.3" cy="10.8" r="2"/><path d="M5.4 15.8c.6-1.5 1.6-2.3 2.9-2.3s2.3.8 2.9 2.3M14 10h4.5M14 13.5h3"/></g></symbol>
+</svg>
+<div id="film">
+
+  <!-- 1. The question (0:00) -->
+  <section class="sc" id="s1">
+    <div class="hook" id="hook">
+      <p class="hk" id="hk1">Your registration.</p>
+      <p class="hk" id="hk2">Your insurance card.</p>
+      <p class="hk" id="hk3">Where are they when you need&nbsp;them?</p>
+    </div>
+  </section>
+
+  <!-- 2. Car Papers (0:05) -->
+  <section class="sc" id="s2">
+    <img class="f-icon" id="s2icon" src="../assets/apple-touch-icon.png" alt="">
+    <h1 class="f-title" id="s2title">Car Papers</h1>
+    <p class="f-tagline" id="s2tag">Your car papers, ready when you need&nbsp;them.</p>
+    <div class="f-lineup">
+      <figure class="phone f-side f-left" id="s2l"><img src="../assets/screens/check-900.webp" alt=""></figure>
+      <figure class="phone f-center" id="s2c"><img id="s2scr" alt=""></figure>
+      <figure class="phone f-side f-right" id="s2r"><img src="../assets/screens/show-900.webp" alt=""></figure>
+    </div>
+  </section>
+
+  <!-- 3. Free. No sign-in. Easy setup. Works as soon as you download it. (0:08) -->
+  <section class="sc grey" id="s3">
+    <p class="f-eyebrow" id="s3eb"><span class="gradient-text">Ready when you are</span></p>
+    <ul class="f-points">
+      <li id="pt1"><span class="rp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 12.5V4.5a1 1 0 0 1 1-1h8l8 8-9 9-8-8Z"/><circle cx="8" cy="8" r="1.4"/></g></svg></span><b>Free.</b></li>
+      <li id="pt2"><span class="rp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.5" r="3.8"/><path d="M4.8 20c.9-3.6 3.7-5.6 7.2-5.6"/><path d="M15.5 15.5 21 21M21 15.5 15.5 21"/></g></svg></span><b>No sign-in.</b></li>
+      <li id="pt3"><span class="rp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h9M4 12h7M4 17h5"/><path d="m14 16 2.5 2.5L21 13"/></g></svg></span><b>Easy setup.</b></li>
+      <li id="pt4"><span class="rp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 2.5 5 13.5h6l-1 8 8.5-11h-6Z"/></g></svg></span><b>Works as soon as you download&nbsp;it.</b></li>
+    </ul>
+  </section>
+
+  <!-- 4. One phone, four things it does (0:13 to 0:30) -->
+  <section class="sc" id="s4">
+    <div class="f-copy">
+      <div class="f-step" id="st1"><p class="f-eyebrow"><span class="gradient-text">Add a paper</span></p><h2>Take a photo.</h2><p class="f-sub">It reads the details for&nbsp;you.</p></div>
+      <div class="f-step" id="st2"><p class="f-eyebrow"><span class="gradient-text">Show mode</span></p><h2>Show them in one&nbsp;tap.</h2><p class="f-sub">Full screen, brightness&nbsp;up.</p></div>
+      <div class="f-step" id="st3"><p class="f-eyebrow"><span class="gradient-text">Widgets</span></p><h2>Right on your Home&nbsp;Screen.</h2><p class="f-sub" id="st3b">And your Lock&nbsp;Screen.</p></div>
+      <div class="f-step" id="st4"><p class="f-eyebrow"><span class="gradient-text">Reminders</span></p><h2>A reminder in&nbsp;time.</h2><p class="f-sub">Before anything&nbsp;expires.</p></div>
+    </div>
+    <figure class="phone f-phone" id="s4phone">
+      <div class="f-screens"><img id="sa" alt=""><img id="sb" alt=""></div>
+    </figure>
+  </section>
+
+  <!-- 5. Privacy (0:30) -->
+  <section class="sc dark" id="s8">
+    <div class="lock-badge f-lock" id="s8lock"><svg><use href="#i-lock"/></svg></div>
+    <p class="f-dark" id="s8a">No account.</p>
+    <p class="f-lit" id="s8b"><span class="w">Nothing</span> <span class="w">leaves</span> <span class="w">your</span> <span class="w">iPhone.</span></p>
+  </section>
+
+  <!-- 6. Car Papers, on iPhone and iPhone Duo (0:33) -->
+  <section class="sc" id="s9">
+    <img class="f-icon" id="s9icon" src="../assets/apple-touch-icon.png" alt="">
+    <h1 class="f-title" id="s9title">Car Papers</h1>
+    <p class="f-free" id="s9free"><span class="gradient-text">Free. No sign-in.</span></p>
+    <div class="f-devices">
+      <figure class="dev dev-iphone" id="s9iphone"><div class="dev-body"><div class="phone iphone-dev"><span class="slab" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><img src="../assets/screens/show-900.webp" alt=""></div></div></figure>
+      <figure class="dev dev-duo" id="s9duo"><div class="dev-body">
+        <div class="duo" role="img" aria-label="Car Papers on iPhone Duo. Folded, its outer screen shows the Car Papers widgets: registration due in 14 days. Unfolded, your papers sit on the left and the registration you picked on the right.">
+              <div class="duo-half duo-right"><span class="slab" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><div class="duo-screen"><span class="duo-bars" aria-hidden="true"><span class="ob-bars"><i></i><i></i><i></i><i></i></span></span><img src="../assets/devices/duo-right.webp" width="660" height="930" loading="lazy" alt=""></div></div>
+              <div class="duo-flap"><span class="slab" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+                <div class="duo-half duo-face duo-front"><div class="duo-screen"><span class="duo-time" aria-hidden="true">9:41</span><img src="../assets/devices/duo-left.webp" width="660" height="930" loading="lazy" alt=""></div></div>
+                <div class="duo-half duo-face duo-back"><div class="duo-screen duo-outer duo-cover"><span class="cover-status"><span class="ob-bars"><i></i><i></i><i></i><i></i></span></span><svg class="cover-lock"><use href="#i-lock"/></svg><p class="cover-inline"><span>Tue 24</span><svg><use href="#i-doc-s"/></svg><span>Registration due in 14&nbsp;days</span></p><p class="cover-time">9:41</p><div class="cover-widgets"><div class="cw-card"><b><svg><use href="#i-card-s"/></svg>Show my papers</b><small>Registration: 14 days</small></div><div class="cw-ring"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15.5" fill="none" stroke="rgba(255,255,255,.28)" stroke-width="3"/><circle cx="18" cy="18" r="15.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-dasharray="45.5 97.4"/></svg><b>14</b><small>days</small></div></div></div></div>
+              </div>
+            </div>
+      </div></figure>
+    </div>
+    <p class="f-tag2" id="s9tag">Ready when you need&nbsp;them.</p>
+  </section>
+</div>
+<script src="film.js"></script>
+</body>
+</html>

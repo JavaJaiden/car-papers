@@ -1,0 +1,60 @@
+/* Car Papers: the film. The website's own type, colours, phone frames and devices, laid out for a
+   1080 × 1920 frame. film.js sets every moving value from the time, so each frame is exact. */
+
+html, body { margin: 0; background: #000; overflow: hidden; }
+#film { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #fff; color: var(--text); font-family: var(--font); letter-spacing: -.022em; }
+.sc { position: absolute; inset: 0; opacity: 0; visibility: hidden; background: #fff; }
+.sc.grey { background: var(--bg-2); }
+.sc.dark { background: #000; color: #f5f5f7; }
+.sc p, .sc h1, .sc h2 { margin: 0; }
+.gradient-text { display: inline-block; }
+
+/* 1. The question */
+.hook { position: absolute; left: 80px; right: 80px; top: 50%; transform: translateY(-50%); text-align: center; }
+.hk { font-size: 100px; line-height: 1.05; font-weight: 700; letter-spacing: -.028em; color: #1d1d1f; text-wrap: balance; }
+.hk + .hk { margin-top: 34px; }
+
+/* 2. Car Papers */
+.f-icon { position: absolute; left: 50%; top: 190px; width: 210px; height: 210px; margin-left: -105px; border-radius: 22.37%; box-shadow: 0 0 0 1px rgba(0, 0, 0, .06), 0 26px 54px -18px rgba(14, 23, 48, .5); }
+.f-title { position: absolute; left: 0; right: 0; top: 440px; text-align: center; font-size: 140px; line-height: 1; font-weight: 700; letter-spacing: -.03em; }
+.f-tagline { position: absolute; left: 90px; right: 90px; top: 612px; text-align: center; font-size: 56px; line-height: 1.16; font-weight: 600; letter-spacing: -.01em; text-wrap: balance; }
+.f-lineup { position: absolute; left: -200px; right: -200px; top: 790px; display: flex; justify-content: center; align-items: flex-end; }
+.f-lineup .phone, .f-phone { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .18), inset 0 0 0 calc(var(--w) * .011) #05060a, 0 50px 90px -40px rgba(0, 0, 0, .5); }
+.f-center { --w: 500px; z-index: 2; }
+.f-side { --w: 420px; z-index: 1; margin-bottom: 30px; }
+.f-left { margin-right: -50px; }
+.f-right { margin-left: -50px; }
+
+/* 3. The four promises */
+#s3 .f-eyebrow { position: absolute; left: 0; right: 0; top: 470px; text-align: center; }
+.f-eyebrow { font-size: 44px; line-height: 1.2; font-weight: 600; letter-spacing: .004em; }
+.f-points { position: absolute; left: 112px; right: 70px; top: 612px; margin: 0; padding: 0; list-style: none; display: grid; gap: 74px; }
+.f-points li { display: grid; grid-template-columns: 150px minmax(0, 1fr); align-items: center; column-gap: 46px; }
+.f-points .rp-icon { width: 150px; height: 150px; border-radius: 44px; box-shadow: 0 28px 44px -20px rgba(40, 86, 198, .85); }
+.f-points .rp-icon svg { width: 78px; height: 78px; }
+.f-points b { font-size: 90px; line-height: 1.02; font-weight: 700; letter-spacing: -.03em; text-wrap: balance; }
+
+/* 4. One phone */
+.f-copy { position: absolute; left: 60px; right: 60px; top: 150px; height: 430px; }
+.f-step { position: absolute; inset: 0; text-align: center; opacity: 0; }
+.f-step h2 { margin-top: 16px; font-size: 92px; line-height: 1.03; font-weight: 700; letter-spacing: -.03em; text-wrap: balance; }
+.f-sub { margin-top: 22px; font-size: 46px; line-height: 1.16; font-weight: 600; letter-spacing: -.01em; color: var(--text-2); }
+.f-phone { --w: 600px; position: absolute; left: 50%; top: 610px; margin-left: -300px; transform-origin: 50% 0; }
+.f-screens { position: relative; overflow: hidden; border-radius: calc(var(--w) * .13); }
+.f-screens img { display: block; }
+.f-screens img + img { position: absolute; inset: 0; opacity: 0; }
+
+/* 5. Privacy */
+.f-lock { position: absolute; left: 50%; top: 600px; width: 176px; height: 176px; margin: 0 0 0 -88px; border-radius: 48px; scale: 1; }
+.f-lock svg { width: 88px; height: 88px; }
+.f-dark { position: absolute; left: 60px; right: 60px; top: 880px; text-align: center; font-size: 104px; line-height: 1.04; font-weight: 700; letter-spacing: -.03em; color: #f5f5f7; }
+.f-lit { position: absolute; left: 70px; right: 70px; top: 1012px; text-align: center; font-size: 104px; line-height: 1.04; font-weight: 700; letter-spacing: -.03em; text-wrap: balance; }
+.f-lit .w { color: #3a3a3c; }
+
+/* 6. The end */
+#s9 .f-icon { top: 210px; width: 176px; height: 176px; margin-left: -88px; }
+#s9 .f-title { top: 430px; }
+.f-free { position: absolute; left: 0; right: 0; top: 598px; text-align: center; font-size: 76px; line-height: 1.1; font-weight: 700; letter-spacing: -.025em; }
+.f-devices { --s: 290px; position: absolute; left: 0; right: 0; top: 800px; display: flex; justify-content: center; align-items: flex-start; gap: 46px; }
+.f-devices .dev-body::after { bottom: -22px; height: 36px; }
+.f-tag2 { position: absolute; left: 0; right: 0; top: 1500px; text-align: center; font-size: 52px; line-height: 1.15; font-weight: 600; letter-spacing: -.01em; color: var(--text-2); }
